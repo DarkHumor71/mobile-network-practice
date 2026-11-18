@@ -867,4 +867,491 @@ window.quizQuestions = [
     tip: "Divide cluster channels by K and then by three sectors; use Erlang B for the offered load per sector.",
   },
   //off other
+  {
+    topic: "Cellular architecture",
+    type: "single",
+    prompt:
+      "What is the repeating geographic building block used to extend cellular service across a wide area?",
+    options: [
+      "A cell",
+      "A frequency band",
+      "A paging group",
+      "A switching center",
+    ],
+    answer: [0],
+    explanation:
+      "A service area is divided into cells. The planned reuse pattern can then be repeated across the region.",
+    tip: "The network is called cellular because its coverage is organized into cells.",
+  },
+  {
+    topic: "Frequency reuse",
+    type: "single",
+    prompt:
+      "What is the main trade-off engineers must manage when the same frequencies are reused in different cells?",
+    options: [
+      "Co-channel interference",
+      "A lack of mobile antennas",
+      "The need to convert voice into video",
+      "The disappearance of handoffs",
+    ],
+    answer: [0],
+    explanation:
+      "Reusing frequencies makes better use of limited spectrum, but transmissions on the same channel can interfere with one another.",
+    tip: "Reuse helps capacity; interference is the price to keep under control.",
+  },
+  {
+    topic: "Reuse geometry",
+    type: "single",
+    prompt:
+      "For a hexagonal layout with shift parameters i = 3 and j = 2, what cluster size K follows from K = i² + ij + j²?",
+    options: ["19", "13", "25", "7"],
+    answer: [0],
+    explanation:
+      "Substitute the shift parameters: K = 3² + (3 × 2) + 2² = 9 + 6 + 4 = 19.",
+    tip: "Square both shifts, then add their product.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "In a trunked system, Grade of Service (GOS) is commonly expressed as the probability that a call is…",
+    options: [
+      "blocked",
+      "handed off",
+      "answered by a different cell",
+      "transmitted in two directions",
+    ],
+    answer: [0],
+    explanation:
+      "GOS commonly describes the probability that a call attempt is blocked because no channel is available.",
+    tip: "A blocked call never gets a traffic channel; that probability is a standard service-grade measure.",
+  },
+  {
+    topic: "Antennas",
+    type: "single",
+    prompt: "How is a transmitting antenna's radiation efficiency defined?",
+    options: [
+      "Total radiated power divided by input power",
+      "Input power divided by receiver sensitivity",
+      "Antenna height divided by wavelength",
+      "Received power divided by occupied bandwidth",
+    ],
+    answer: [0],
+    explanation:
+      "Radiation efficiency is the fraction of input power that is actually radiated: total radiated power divided by input power.",
+    tip: "Efficiency compares useful radiated output with the power supplied.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "single",
+    prompt:
+      "Which assignment strategy can activate smaller overlapping cells as needed and is suited to gradual, long-term growth?",
+    options: [
+      "Overlapped-cells-based channel assignment",
+      "Pure ALOHA",
+      "Fixed paging",
+      "Hard handoff",
+    ],
+    answer: [0],
+    explanation:
+      "Overlapped-cell assignment can add smaller cells as demand grows, offering a gradual alternative to immediately splitting every cell.",
+    tip: "Think of the smaller cells as extra capacity that can be brought online when needed.",
+  },
+  {
+    topic: "Handoffs",
+    type: "single",
+    prompt: "What is one resource advantage of a hard handoff?",
+    options: [
+      "The call uses only one channel at a time during the transfer.",
+      "The mobile always stays connected to two base stations.",
+      "It eliminates the need to select a target cell.",
+      "It allows the call to use every channel in the cluster.",
+    ],
+    answer: [0],
+    explanation:
+      "A hard handoff breaks the old radio link as the new one is established, so the call uses one channel at a time rather than maintaining overlapping links.",
+    tip: "Hard handoff is often summarized as break-before-make.",
+  },
+  {
+    topic: "Voice quality",
+    type: "single",
+    prompt:
+      "On the Mean Opinion Score scale cited in the study guide, what value is typical of telephone voice quality?",
+    options: ["About 1", "About 3", "About 4.8", "About 5.5"],
+    answer: [1],
+    explanation:
+      "The study guide uses an MOS of approximately 3 as a typical telephone-voice quality reference.",
+    tip: "MOS is a listener-rated quality scale; higher scores indicate better perceived speech.",
+  },
+  {
+    topic: "Multiple access",
+    type: "single",
+    prompt:
+      "Under heavy offered load, what happens to average packet delay as successful throughput collapses toward zero?",
+    options: [
+      "It approaches infinity.",
+      "It approaches zero.",
+      "It stays exactly one frame time.",
+      "It becomes independent of traffic.",
+    ],
+    answer: [0],
+    explanation:
+      "When heavy contention drives successful throughput toward zero, packets can wait and retry for increasingly long periods, so average delay grows without bound in the idealized model.",
+    tip: "Little useful throughput plus persistent demand means an ever-growing queue or retry wait.",
+  },
+  {
+    topic: "Reuse geometry",
+    type: "single",
+    prompt:
+      "Using A = (3√3/2)R², what is the area of a regular hexagonal cell with center-to-edge radius R = 2 km?",
+    options: [
+      "About 10.4 km²",
+      "About 6.9 km²",
+      "About 20.8 km²",
+      "About 2.6 km²",
+    ],
+    answer: [0],
+    explanation: "A = (3√3/2) × 2² = 6√3 ≈ 10.39 km².",
+    tip: "Square the radius first; the factor 3√3/2 is about 2.598.",
+  },
+  {
+    topic: "Interference math",
+    type: "single",
+    prompt:
+      "For the three-sector, K = 7, path-loss-exponent-4 case in the study guide, what approximate C/I result is reported?",
+    options: ["20 dB", "11.26 dB", "18 dB", "24.76 dB"],
+    answer: [0],
+    explanation:
+      "The guide's worked result for the three-sector system with K = 7 is approximately 20 dB.",
+    tip: "Sector orientation changes which first-tier interferers contribute; use the stated sectoring model.",
+  },
+  {
+    topic: "Interference math",
+    type: "single",
+    prompt:
+      "For the six-sector, K = 4, path-loss-exponent-4 case in the study guide, what approximate C/I is reported?",
+    options: ["18.57 dB", "20 dB", "24.76 dB", "11.26 dB"],
+    answer: [2],
+    explanation:
+      "The guide reports approximately 24.76 dB for the six-sector system with K = 4 in this worked example.",
+    tip: "Don't compare C/I values without keeping both the reuse size and sector pattern in view.",
+  },
+  {
+    topic: "Interference math",
+    type: "single",
+    prompt:
+      "A design needs practical C/I of 25 dB. Two candidate designs produce 20 dB and 24.76 dB. Do either meet the target?",
+    options: [
+      "Yes, both",
+      "Yes, only the 20 dB design",
+      "Yes, only the 24.76 dB design",
+      "No, neither",
+    ],
+    answer: [3],
+    explanation:
+      "The practical target is 18 dB theoretical plus a 7 dB margin, or 25 dB. Both 20 dB and 24.76 dB fall short.",
+    tip: "Compare each candidate against the full practical requirement, not just the theoretical baseline.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "single",
+    prompt:
+      "A 2 MHz setup-channel band uses full-duplex channels made from two 30 kHz simplex channels. How many complete setup channels fit?",
+    options: ["33", "66", "100", "200"],
+    answer: [0],
+    explanation:
+      "Each full-duplex channel uses 60 kHz. Dividing 2,000 kHz by 60 kHz gives 33 complete channels, with some bandwidth left over.",
+    tip: "Pair the uplink and downlink bandwidth before dividing.",
+  },
+  {
+    topic: "Capacity math",
+    type: "single",
+    prompt:
+      "A system covers 5,000 km² using cells that each cover 10 km². Ignoring boundary effects, how many cells are needed?",
+    options: ["500", "50", "5,000", "50,000"],
+    answer: [0],
+    explanation:
+      "Divide total coverage area by the area per cell: 5,000 / 10 = 500 cells.",
+    tip: "This is an area ratio; the units cancel to leave a count of cells.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "single",
+    prompt:
+      "An analog FDMA cluster has 12.5 MHz bandwidth, 30 kHz channel spacing, 10 kHz guards at both band edges, and 21 control channels. Approximately how many data channels are in the cluster?",
+    options: ["395", "416", "21", "500"],
+    answer: [0],
+    explanation:
+      "The band fits (12,500 − 20) / 30 = 416 channels before control allocation. Subtract 21 control channels to get 395 data channels.",
+    tip: "Remove both edge guards, count channel slots, then subtract the control channels.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "If a call occupies a channel for an average of 120 seconds, about how many calls per hour can one continuously available channel serve?",
+    options: ["30", "12", "60", "120"],
+    answer: [0],
+    explanation:
+      "There are 3,600 seconds in an hour. At 120 seconds per call, 3,600 / 120 = 30 calls per hour.",
+    tip: "Calls per hour per channel = 3,600 seconds divided by the average holding time in seconds.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "One subscriber makes one call per hour, and the average call lasts six minutes. What is the offered traffic per subscriber?",
+    options: ["0.1 Erlang", "0.01 Erlang", "1 Erlang", "6 Erlangs"],
+    answer: [0],
+    explanation:
+      "Offered traffic is call rate × holding time: 1 call/hour × 6/60 hour = 0.1 Erlang.",
+    tip: "Convert minutes to hours before multiplying by calls per hour.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "System A has 25 channels per cell, 2% blocking, and users each offer 0.1 Erlang. Using the study guide's Erlang-B table value, about how many users fit per cell?",
+    options: ["175", "25", "19", "250"],
+    answer: [0],
+    explanation:
+      "At 25 channels and 2% blocking, the guide uses about 17.5 Erlangs. Dividing by 0.1 Erlang per user gives about 175 users per cell.",
+    tip: "Find the offered Erlangs at the blocking target, then divide by traffic per user.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "System B has 27 channels per cell and supports about 19.3 Erlangs at 2% blocking. If each user offers 0.1 Erlang, approximately how many users fit?",
+    options: ["193", "27", "81", "2,000"],
+    answer: [0],
+    explanation:
+      "19.3 Erlangs divided by 0.1 Erlang per user gives approximately 193 users per cell.",
+    tip: "The Erlang value is aggregate traffic; dividing by per-user traffic gives the subscriber count.",
+  },
+  {
+    topic: "Capacity planning",
+    type: "single",
+    prompt:
+      "A 400 km² region has 100 users/km². If each cell supports about 193 users, how many cells are needed at minimum?",
+    options: ["208", "193", "40", "400"],
+    answer: [0],
+    explanation:
+      "The region has 400 × 100 = 40,000 users. Dividing by 193 gives about 207.3, so round up to 208 whole cells.",
+    tip: "When planning coverage, round a fractional required cell count up.",
+  },
+  {
+    topic: "Antenna diversity",
+    type: "single",
+    prompt:
+      "Base-station receive antennas are often separated to obtain which kind of diversity?",
+    options: [
+      "Space diversity",
+      "Time division",
+      "Frequency reuse",
+      "Code diversity",
+    ],
+    answer: [0],
+    explanation:
+      "Spatially separated receive antennas can experience different fading conditions, providing space diversity.",
+    tip: "The antennas are separated in physical space, so the name is a direct clue.",
+  },
+  {
+    topic: "Interference reduction",
+    type: "multi",
+    prompt:
+      "Which techniques can reduce co-channel interference in a cellular network? Select every valid answer.",
+    options: [
+      "Increase the separation between co-channel cells.",
+      "Lower cell-site antenna heights where appropriate.",
+      "Use directional antennas at cell sites.",
+      "Use receiver diversity.",
+      "Place every co-channel transmitter closer to the same mobile.",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Greater co-channel separation, careful antenna heights, directional patterns, and receiver diversity are all established interference-reduction methods.",
+    tip: "The first four manage distance, propagation, direction, or fading; the last option worsens interference.",
+  },
+  {
+    topic: "Cell planning",
+    type: "multi",
+    prompt:
+      "What complications commonly come with deploying smaller cells? Select every valid answer.",
+    options: [
+      "More cell sites are needed.",
+      "Mobiles cross cell boundaries more often, increasing handoffs.",
+      "The network must make measurements and decisions more quickly.",
+      "High-speed mobiles can face excessive handoffs in very small cells.",
+      "Co-channel interference becomes impossible.",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Smaller cells require more infrastructure and create more frequent handoffs. They also demand faster control, and very high mobility can make handoff rates impractical.",
+    tip: "More cells improve spatial reuse, but mobility and control overhead rise too.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "multi",
+    prompt:
+      "Which are advantages of dynamic channel assignment? Select every valid answer.",
+    options: [
+      "Better use of available channel resources.",
+      "Adaptation to changing traffic loads.",
+      "Improved load balancing between cells.",
+      "Better performance under some low-traffic conditions.",
+      "No need to check channels for interference.",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Dynamic assignment can improve utilization, adapt to traffic, and balance load. It does require interference checks and more management.",
+    tip: "Dynamic means responsive to demand; it does not mean free of coordination work.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "multi",
+    prompt:
+      "What are possible costs or complications of dynamic channel assignment? Select every valid answer.",
+    options: [
+      "Exhaustive interference checking.",
+      "Tracking which channels are currently in use.",
+      "More complex channel management.",
+      "Delay while a channel is selected.",
+      "A need for equipment that can tune across assigned frequencies.",
+    ],
+    answer: [0, 1, 2, 3, 4],
+    explanation:
+      "Dynamic assignment improves flexibility at the cost of extra tracking, interference checking, selection delay, and equipment or management complexity.",
+    tip: "Flexibility needs information: the system must know which channels are free and safe to use.",
+  },
+  {
+    topic: "Radio system limits",
+    type: "multi",
+    prompt:
+      "Which are recognized limitations of conventional radio communication systems? Select every valid answer.",
+    options: [
+      "Inefficient use of spectrum.",
+      "Limited ability to serve a wide area.",
+      "Insufficient system capacity.",
+      "A lower grade of service than desired.",
+      "Unlimited channels for every user.",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Limited spectrum efficiency, coverage, capacity, and service quality are all challenges that motivated cellular network design.",
+    tip: "Cellular architecture was developed to make scarce spectrum serve more people over larger areas.",
+  },
+  {
+    topic: "Frequency reuse",
+    type: "multi",
+    prompt:
+      "With a fixed amount of spectrum, what are typical effects of reducing the cluster size K? Select every valid answer.",
+    options: [
+      "More channels can be assigned to each cell.",
+      "Capacity per cell can increase.",
+      "Co-channel cells are closer, so interference tends to increase.",
+      "Co-channel interference is guaranteed to disappear.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "A smaller cluster reuses frequencies more often, increasing channels and capacity per cell while bringing co-channel cells closer and raising interference.",
+    tip: "Smaller K trades more reuse and capacity for tighter interference constraints.",
+  },
+  {
+    topic: "LTE",
+    type: "multi",
+    prompt:
+      "Which technologies are key enablers of LTE in the study guide? Select both.",
+    options: [
+      "Orthogonal Frequency Division Multiplexing (OFDM)",
+      "Multiple-Input Multiple-Output (MIMO)",
+      "Pure ALOHA",
+      "Analog frequency modulation",
+    ],
+    answer: [0, 1],
+    explanation:
+      "LTE uses OFDM-family radio techniques and MIMO antenna technology to provide efficient broadband transmission and higher performance.",
+    tip: "Think multicarrier modulation plus multiple antenna paths.",
+  },
+  {
+    topic: "Interference",
+    type: "single",
+    prompt:
+      "In the conventional seven-cell reuse pattern, how many co-channel cells are in the second interference tier?",
+    options: ["12", "6", "7", "18"],
+    answer: [0],
+    explanation:
+      "The standard hexagonal seven-cell reuse layout has six first-tier co-channel cells and twelve in the second tier.",
+    tip: "The first ring has six positions; the next ring has twice as many.",
+  },
+  {
+    topic: "Control channels",
+    type: "single",
+    prompt:
+      "When a mobile originates a call in the cellular control-channel model from the study guide, which channel carries its request?",
+    options: [
+      "Reverse control channel",
+      "Forward paging channel",
+      "Traffic channel only",
+      "Broadcast TV channel",
+    ],
+    answer: [0],
+    explanation:
+      "A mobile-originated setup request travels from the mobile toward the network on the reverse control channel.",
+    tip: "Reverse means the mobile is sending toward the base station.",
+  },
+  {
+    topic: "GSM",
+    type: "single",
+    prompt:
+      "Which GSM database keeps temporary subscriber and location information for the area a mobile is currently visiting?",
+    options: [
+      "Visitor Location Register (VLR)",
+      "Home Location Register (HLR)",
+      "Equipment Identity Register (EIR)",
+      "Short Message Service Center (SMSC)",
+    ],
+    answer: [0],
+    explanation:
+      "The VLR stores temporary subscriber information for mobiles currently in its service area; the HLR is the subscriber's home record.",
+    tip: "Visitor = currently roaming in this region; Home = primary subscriber record.",
+  },
+  {
+    topic: "GSM",
+    type: "single",
+    prompt:
+      "Which identifier is assigned to a mobile handset's equipment, rather than to the subscriber's SIM account?",
+    options: ["IMEI", "VLR", "MSC", "MCC"],
+    answer: [0],
+    explanation:
+      "The International Mobile Equipment Identity (IMEI) identifies the mobile equipment itself.",
+    tip: "IMEI identifies the device; subscriber identity numbers identify the subscription.",
+  },
+  {
+    topic: "GSM",
+    type: "single",
+    prompt:
+      "In the GSM architecture described by the guide, which network element handles call setup and mobility management?",
+    options: [
+      "Mobile Switching Center (MSC)",
+      "Visitor Location Register (VLR)",
+      "Base Transceiver Station (BTS)",
+      "Equipment Identity Register (EIR)",
+    ],
+    answer: [0],
+    explanation:
+      "The MSC coordinates switching, call setup, and mobility management across the cellular network.",
+    tip: "The BTS provides radio access; the MSC coordinates switching and mobility.",
+  },
+  {
+    topic: "Multiple access",
+    type: "single",
+    prompt:
+      "Which access method is used by IEEE 802.11 wireless LANs to help avoid collisions on the shared radio medium?",
+    options: ["CSMA/CA", "CSMA/CD", "Pure ALOHA", "FDMA only"],
+    answer: [0],
+    explanation:
+      "Wi-Fi uses CSMA/CA, which attempts to avoid collisions because a radio generally cannot reliably detect a collision while transmitting.",
+    tip: "Wireless LANs avoid collisions; classic shared Ethernet used collision detection.",
+  },
 ];

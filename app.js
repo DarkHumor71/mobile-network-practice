@@ -16,6 +16,9 @@
   const reviewSection = document.querySelector("#review-section");
   const reviewList = document.querySelector("#review-list");
 
+  document.querySelector("#question-total").textContent = String(questions.length);
+  progressBar.setAttribute("aria-valuemax", String(questions.length));
+
   let roundQuestions = questions.slice();
   let currentIndex = 0;
   let selectedAnswers = [];

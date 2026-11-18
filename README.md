@@ -1,6 +1,6 @@
 # Signal Sprint
 
-A no-build, static practice quiz for mobile communications, based on the topics in the CENG645 ungraded self-assessment. The 59 prompts are rewritten for practice and include answer explanations and study tips.
+A no-build, static practice quiz for mobile communications, covering the CENG645 ungraded self-assessment and the 2017–2018 / 2018–2019 midterm study guide. Questions are paraphrased for practice and include answer explanations and study tips.
 
 ## Run locally
 

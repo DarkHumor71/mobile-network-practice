@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f5f7f2">
-    <meta name="description" content="A friendly, interactive 59-question mobile communications practice quiz.">
+    <meta name="description" content="A friendly, interactive mobile communications practice quiz.">
     <title>Signal Sprint — Mobile Comms Practice</title>
     <link rel="stylesheet" href="styles.css">
     <script src="questions.js" defer></script>
@@ -27,7 +27,7 @@
             <h1 id="welcome-title">Tune in.<br><span>Level up.</span></h1>
             <p class="welcome-intro">A low-pressure signal check for your mobile communications knowledge. Make a choice, get the why, and keep your learning signal strong.</p>
             <div class="welcome-facts" aria-label="Quiz details">
-              <span><strong>59</strong> questions</span>
+              <span><strong id="question-total">0</strong> questions</span>
               <span><strong>Instant</strong> explanations</span>
               <span><strong>Zero</strong> pressure</span>
             </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="streak-pill" id="streak-pill" aria-live="polite"><span aria-hidden="true">⚡</span> <span id="streak-count">0</span> streak</div>
           </div>
-          <div class="progress-track" role="progressbar" id="progress-bar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="59" aria-valuenow="0">
+          <div class="progress-track" role="progressbar" id="progress-bar" aria-label="Quiz progress" aria-valuemin="0" aria-valuenow="0">
             <span class="progress-fill" id="progress-fill"></span>
           </div>
 
