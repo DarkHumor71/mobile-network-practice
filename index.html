@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f2">
+    <meta name="description" content="A friendly, interactive 59-question mobile communications practice quiz.">
+    <title>Signal Sprint — Mobile Comms Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="questions.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Signal Sprint home">
+          <span class="brand-mark" aria-hidden="true">〰</span>
+          <span>signal<span class="brand-accent">sprint</span></span>
+        </a>
+        <span class="header-note"><span class="live-dot"></span> Your friendly frequency check</span>
+      </header>
+
+      <main>
+        <section class="screen welcome-screen" id="welcome-screen" aria-labelledby="welcome-title">
+          <div class="welcome-copy">
+            <p class="eyebrow"><span aria-hidden="true">📡</span> MOBILE COMMUNICATIONS · PRACTICE MODE</p>
+            <h1 id="welcome-title">Tune in.<br><span>Level up.</span></h1>
+            <p class="welcome-intro">A low-pressure signal check for your mobile communications knowledge. Make a choice, get the why, and keep your learning signal strong.</p>
+            <div class="welcome-facts" aria-label="Quiz details">
+              <span><strong>59</strong> questions</span>
+              <span><strong>Instant</strong> explanations</span>
+              <span><strong>Zero</strong> pressure</span>
+            </div>
+            <button class="button button-primary start-button" id="start-button" type="button">Start the sprint <span aria-hidden="true">→</span></button>
+            <p class="microcopy">No timer. No account. Just you and the signal.</p>
+          </div>
+          <div class="welcome-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+            <div class="tower">
+              <span class="tower-wave wave-one"></span>
+              <span class="tower-wave wave-two"></span>
+              <span class="tower-wave wave-three"></span>
+              <span class="tower-cap"></span>
+              <span class="tower-pole"></span>
+              <span class="tower-base"></span>
+            </div>
+            <span class="art-star star-one">✦</span>
+            <span class="art-star star-two">✦</span>
+            <span class="art-label">5G READY</span>
+            <span class="art-frequency">f = focus</span>
+          </div>
+        </section>
+
+        <section class="screen quiz-screen" id="quiz-screen" aria-labelledby="question-title" hidden>
+          <div class="quiz-topline">
+            <div>
+              <p class="eyebrow">PRACTICE IN PROGRESS</p>
+              <p class="question-count" id="question-count" aria-live="polite"></p>
+            </div>
+            <div class="streak-pill" id="streak-pill" aria-live="polite"><span aria-hidden="true">⚡</span> <span id="streak-count">0</span> streak</div>
+          </div>
+          <div class="progress-track" role="progressbar" id="progress-bar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="59" aria-valuenow="0">
+            <span class="progress-fill" id="progress-fill"></span>
+          </div>
+
+          <div class="quiz-layout">
+            <article class="question-card">
+              <div class="question-meta">
+                <span class="topic-chip" id="topic-chip"></span>
+                <span class="question-number" id="question-number"></span>
+              </div>
+              <h2 id="question-title" tabindex="-1"></h2>
+              <p class="select-hint" id="select-hint">
+                <strong id="answer-mode"></strong>
+                <span id="answer-mode-instruction"></span>
+              </p>
+              <fieldset class="answer-list" id="answer-list">
+                <legend class="sr-only">Choose your answer</legend>
+              </fieldset>
+              <div class="feedback" id="feedback" aria-live="polite" hidden>
+                <div class="feedback-heading" id="feedback-heading"></div>
+                <p class="feedback-explanation" id="feedback-explanation"></p>
+                <p class="feedback-tip" id="feedback-tip"></p>
+              </div>
+              <div class="question-actions">
+                <button class="button button-quiet" id="back-button" type="button">← Back</button>
+                <button class="button button-primary" id="action-button" type="button" disabled>Check answer <span aria-hidden="true">↗</span></button>
+              </div>
+            </article>
+            <aside class="side-note">
+              <div class="side-note-icon" aria-hidden="true">💡</div>
+              <h3>Good to know</h3>
+              <p>Every answer comes with a quick explanation. Getting one wrong is just your brain collecting a better signal.</p>
+              <div class="mini-progress">
+                <div class="mini-progress-label"><span>Answered</span><strong id="answered-count">0 / 59</strong></div>
+                <div class="mini-progress-track"><span id="answered-fill"></span></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="screen results-screen" id="results-screen" aria-labelledby="results-title" hidden>
+          <div class="results-hero">
+            <div class="results-orbit" aria-hidden="true"><span id="results-emoji">📡</span></div>
+            <p class="eyebrow">SPRINT COMPLETE</p>
+            <h1 id="results-title">Signal received!</h1>
+            <p class="results-message" id="results-message"></p>
+            <div class="score-card">
+              <span class="score-label">YOUR SCORE</span>
+              <strong class="score-value" id="score-value"></strong>
+              <span class="score-detail" id="score-detail"></span>
+            </div>
+            <div class="results-stats">
+              <div><strong id="correct-stat"></strong><span>correct</span></div>
+              <div><strong id="review-stat"></strong><span>to revisit</span></div>
+              <div><strong id="streak-stat"></strong><span>best streak</span></div>
+            </div>
+            <div class="results-actions">
+              <button class="button button-primary" id="retry-button" type="button">Practice missed questions <span aria-hidden="true">↻</span></button>
+              <button class="button button-quiet" id="restart-button" type="button">Start a fresh sprint</button>
+            </div>
+          </div>
+          <div class="review-section" id="review-section" hidden>
+            <div class="review-heading">
+              <div><p class="eyebrow">YOUR REVIEW QUEUE</p><h2>Make these concepts stick</h2></div>
+              <span class="review-count" id="review-count"></span>
+            </div>
+            <div class="review-list" id="review-list"></div>
+          </div>
+          <p class="footer-note">Built for learning, not grading. You’ve got this. ✨</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>Signal Sprint</span>
+        <span>Learn the principles. Follow the signal.</span>
+      </footer>
+    </div>
+  </body>
+</html>
