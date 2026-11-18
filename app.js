@@ -29,8 +29,18 @@
     resultsScreen.hidden = screen !== "results";
   }
 
+  function shuffle(items) {
+    const shuffledItems = items.slice();
+    for (let index = shuffledItems.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [shuffledItems[index], shuffledItems[swapIndex]] =
+        [shuffledItems[swapIndex], shuffledItems[index]];
+    }
+    return shuffledItems;
+  }
+
   function startRound(items) {
-    roundQuestions = items;
+    roundQuestions = shuffle(items);
     currentIndex = 0;
     selectedAnswers = [];
     savedAnswers = new Array(items.length).fill(null);
