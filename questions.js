@@ -1892,4 +1892,499 @@ window.quizQuestions = [
     "Frequency Division Duplex uses separate uplink and downlink frequency bands, separated by a duplex spacing.",
   tip: "FDD separates directions by frequency; TDD separates them by time.",
 },
+{
+  topic: "Cellular fundamentals",
+  type: "multi",
+  prompt: "Cellular communication is designed to enhance which of the following? Select every valid answer.",
+  options: [
+    "System capacity",
+    "Spectrum efficiency",
+    "Coverage area",
+    "Desired signal quality",
+  ],
+  answer: [0, 1, 2, 3],
+  explanation:
+    "Cellular design uses many techniques to improve capacity, spectrum use, coverage, and the quality of the desired signal.",
+  tip: "Cellular systems balance several goals rather than optimizing only one.",
+},
+{
+  topic: "Cellular fundamentals",
+  type: "multi",
+  prompt: "Which limitations are associated with conventional radio communication systems? Select every valid answer.",
+  options: [
+    "Low-power transmission",
+    "Limited services",
+    "Small coverage area",
+    "Inefficient spectrum utilization",
+  ],
+  answer: [1, 2, 3],
+  explanation:
+    "The supplied answer key identifies limited services, small coverage, and inefficient spectrum use as limitations; low-power transmission is not selected.",
+  tip: "Cellular architecture was developed in part to improve service, coverage, and reuse of scarce spectrum.",
+},
+{
+  topic: "Cell planning",
+  type: "multi",
+  prompt: "Why is a hexagon used as the theoretical cell shape in cellular planning? Select every valid answer.",
+  options: [
+    "It reduces the occurrence of handovers.",
+    "For a given radius, it has the largest area.",
+    "It offers a practical, non-overlapping approximation of radio coverage.",
+    "It matches the shape of real-world coverage.",
+  ],
+  answer: [1, 2],
+  explanation:
+    "Hexagons tile a plane without gaps and are a useful idealization of a circular coverage area. Real cells do not have perfectly regular boundaries.",
+  tip: "The hexagon is a planning model, not a claim that real radio coverage is hexagonal.",
+},
+{
+  topic: "Cell planning",
+  type: "multi",
+  prompt: "Which constraints affect the shape of actual cells? Select every valid answer.",
+  options: [
+    "None of them",
+    "Non-uniform population densities",
+    "Man-made structures",
+    "Natural irregular terrain",
+  ],
+  answer: [1, 2, 3],
+  explanation:
+    "Population distribution, buildings, and terrain all affect propagation and the practical boundaries of cells.",
+  tip: "Actual coverage follows propagation and demand, not a geometric template.",
+},
+{
+  topic: "Cellular fundamentals",
+  type: "single",
+  prompt: "What is a major factor affecting cellular system design?",
+  options: [
+    "Noise",
+    "Power consumption",
+    "Geographic area",
+    "Interference",
+  ],
+  answer: [3],
+  explanation:
+    "Best-effort key: interference is the most likely intended answer because frequency reuse makes interference a central cellular-design constraint. The source marking was unclear.",
+  tip: "Reuse improves capacity, but co-channel interference must be controlled.",
+},
+{
+  topic: "Cell sectoring",
+  type: "single",
+  prompt: "What is the main aim of cell sectoring?",
+  options: [
+    "Reduce co-channel interference and decrease C/I",
+    "Reduce co-channel interference and increase C/I by increasing cluster size K",
+    "Reduce co-channel interference and decrease C/I by decreasing cluster size K",
+    "Reduce co-channel interference and increase C/I without increasing cluster size K",
+  ],
+  answer: [3],
+  explanation:
+    "Directional sector antennas reduce the number of interfering co-channel cells seen by a sector, improving C/I without requiring a larger cluster.",
+  tip: "Sectoring improves the interference environment while preserving the reuse cluster size.",
+},
+{
+  topic: "Cell sectoring",
+  type: "single",
+  prompt: "Which listed advantage of cell sectoring is correct?",
+  options: [
+    "Enhancing trunking efficiency",
+    "Lowering transmission power",
+    "Increasing coverage area",
+    "Enhancing spectrum efficiency",
+  ],
+  answer: [3],
+  explanation:
+    "Sectoring can improve spectrum efficiency by reducing interference and allowing more aggressive frequency reuse.",
+  tip: "Sectoring is chiefly an interference and capacity technique.",
+},
+{
+  topic: "Frequency reuse",
+  type: "single",
+  prompt: "When cluster size K is minimized, what happens to overall system capacity C?",
+  options: [
+    "It increases.",
+    "It decreases.",
+    "It remains unchanged.",
+    "It becomes zero.",
+  ],
+  answer: [0],
+  explanation:
+    "A smaller reuse cluster allows the available channels to be reused more frequently, increasing capacity, though co-channel interference also rises.",
+  tip: "Smaller K means more frequent reuse and greater capacity, with an interference trade-off.",
+},
+{
+  topic: "Frequency reuse",
+  type: "single",
+  prompt: "Minimizing cluster size K will have which effects?",
+  options: [
+    "Increase co-channel interference and decrease system capacity",
+    "Decrease co-channel interference and system capacity",
+    "Increase co-channel interference and system capacity",
+    "Decrease co-channel interference and increase system capacity",
+  ],
+  answer: [2],
+  explanation:
+    "A smaller cluster increases how often frequencies are reused, which raises both capacity and co-channel interference.",
+  tip: "Frequency reuse trades a higher interference level for more capacity.",
+},
+{
+  topic: "Frequency reuse",
+  type: "single",
+  prompt: "What is a likely effect of increasing capacity through frequency reuse?",
+  options: [
+    "Wider coverage",
+    "A decrease in co-channel interference",
+    "Better signal quality",
+    "An increase in co-channel interference",
+  ],
+  answer: [3],
+  explanation:
+    "More aggressive reuse places co-channel cells closer together, which generally increases co-channel interference.",
+  tip: "Capacity gains from reuse can come with a signal-quality cost.",
+},
+{
+  topic: "Cell splitting",
+  type: "single",
+  prompt: "With the supplied cell-splitting model, how do the number of clusters over the coverage area and overall system capacity change?",
+  options: [
+    "Clusters increase; capacity decreases.",
+    "Clusters decrease; capacity remains the same.",
+    "Clusters increase; capacity increases.",
+    "Clusters decrease; capacity increases.",
+  ],
+  answer: [3],
+  explanation:
+    "The supplied answer key indicates that splitting increases the number of smaller cells, so fewer complete reuse clusters are needed across the same coverage area while capacity increases.",
+  tip: "Cell splitting adds smaller cells to serve higher traffic density.",
+},
+{
+  topic: "Cell splitting",
+  type: "single",
+  prompt: "After one cell split, what is the new capacity relative to the old capacity?",
+  options: ["The same", "Twice as high", "Three times as high", "Half as high"],
+  answer: [1],
+  explanation:
+    "In the simplified model, dividing one cell into two smaller cells doubles the number of cells reusing the channel set and therefore doubles capacity.",
+  tip: "This twofold result assumes the simplified one-cell-to-two model.",
+},
+{
+  topic: "Co-channel interference",
+  type: "single",
+  prompt: "Which method reduces co-channel interference?",
+  options: [
+    "Lowering antenna heights at the cell site",
+    "Using omnidirectional antennas at the cell site",
+    "Increasing the separation between two co-channel cells",
+    "All of them",
+  ],
+  answer: [2],
+  explanation:
+    "Increasing the separation between co-channel cells reduces the interference power received from the other cell.",
+  tip: "Greater reuse distance generally means less co-channel interference.",
+},
+{
+  topic: "Antennas",
+  type: "single",
+  prompt: "At what point is antenna Half Power Beamwidth (HPBW) measured?",
+  options: [
+    "Where the pattern decreases by 50% from the peak of a side lobe",
+    "Where the pattern decreases by 3 dB from the peak of the main beam",
+    "Where the pattern increases by 3 dB from the peak of a side lobe",
+    "Where the pattern increases by 50% from the peak of the main beam",
+  ],
+  answer: [1],
+  explanation:
+    "HPBW is the angular width between the points where power falls to half its peak value, corresponding to -3 dB from the main-beam peak.",
+  tip: "Half power corresponds to a 3 dB decrease in power.",
+},
+{
+  topic: "Antennas",
+  type: "single",
+  prompt: "What does using two antennas at a base station provide?",
+  options: [
+    "Reduction in interference",
+    "Security",
+    "Diversity",
+    "Enhancement in the coverage area",
+  ],
+  answer: [2],
+  explanation:
+    "A pair of antennas can provide diversity reception, helping mitigate fading by combining or selecting signals with different propagation paths.",
+  tip: "Antenna diversity combats fading; it is not simply an increase in coverage area.",
+},
+{
+  topic: "Mobile initialization",
+  type: "single",
+  prompt: "After a mobile is switched on, which channels does it first scan during initialization?",
+  options: [
+    "All reverse control channels, selecting the strongest",
+    "All voice channels, selecting the strongest",
+    "All forward control channels, selecting the strongest",
+    "All forward control channels, selecting the weakest",
+  ],
+  answer: [2],
+  explanation:
+    "The mobile scans forward control channels and selects the strongest suitable one to begin system acquisition.",
+  tip: "Initialization starts by finding a usable forward control channel.",
+},
+{
+  topic: "Handoffs",
+  type: "boolean",
+  prompt: "An intra-cell handover takes place when a mobile moves from one sector to another within the same cell.",
+  options: ["True", "False"],
+  answer: [0],
+  explanation:
+    "A transition between sectors belonging to the same cell is an intra-cell handover.",
+  tip: "A sector change can require a handover even when the cell site remains the same.",
+},
+{
+  topic: "Handoffs",
+  type: "boolean",
+  prompt: "If a mobile reaches a signal-strength hole not covered by any cell, a handoff is made automatically.",
+  options: ["True", "False"],
+  answer: [1],
+  explanation:
+    "Best-effort key: likely false. A handoff needs a suitable target cell; if no cell covers the area, the connection may be lost instead. The source wording and marked answer were unclear.",
+  tip: "Handoff can move a connection to another available cell, but cannot create coverage where none exists.",
+},
+{
+  topic: "Channel borrowing",
+  type: "single",
+  prompt: "What is temporary channel sharing between a cell and a neighboring cell called?",
+  options: [
+    "Cell sectoring",
+    "Channel borrowing",
+    "Cell splitting",
+  ],
+  answer: [1],
+  explanation:
+    "Channel borrowing temporarily lets an overloaded cell use an available channel from a donor cell, subject to interference constraints.",
+  tip: "The overloaded cell borrows; the donor cell lends.",
+},
+{
+  topic: "Channel borrowing",
+  type: "multi",
+  prompt: "In a cellular network, from where can a cell borrow additional channels? Select every valid answer.",
+  options: [
+    "Another sector of the same cell site",
+    "Another cell in the same cluster that has free channels",
+    "Another communication system such as Wi-Fi",
+    "A cell in a different cluster that has free channels",
+  ],
+  answer: [0, 1],
+  explanation:
+    "Best-effort key: the supplied notes identify another sector at the same site and a cell in the same cluster as sources. The scan does not clearly establish the selected choices; actual borrowing is constrained by the frequency plan and interference rules.",
+  tip: "A donor must have a compatible free channel that can be used without violating reuse constraints.",
+},
+{
+  topic: "Channel assignment",
+  type: "single",
+  prompt: "In an overlapped-cells channel-assignment scheme, smaller cells are activated or deactivated according to what?",
+  options: [
+    "Interference",
+    "Number of channels",
+    "Traffic",
+    "Total power consumption",
+  ],
+  answer: [2],
+  explanation:
+    "The smaller cells can be activated or deactivated in response to traffic demand.",
+  tip: "Overlaid cell layers help adapt capacity to changing demand.",
+},
+{
+  topic: "Frequency management",
+  type: "boolean",
+  prompt: "Frequency management and channel assignment help achieve spectrum-utilization objectives and adapt to traffic density.",
+  options: ["True", "False"],
+  answer: [0],
+  explanation:
+    "Frequency management organizes channel use, while assignment methods can adapt available channels to traffic and system requirements.",
+  tip: "Good channel planning balances efficient spectrum use with changing demand.",
+},
+{
+  topic: "FDD",
+  type: "single",
+  prompt: "What does Frequency Division Duplex (FDD) separate?",
+  options: [
+    "Subscribers in the same cell on the downlink",
+    "Subscribers in the same cell on the uplink",
+    "The uplink and downlink of the same subscriber",
+    "None of the choices",
+  ],
+  answer: [2],
+  explanation:
+    "FDD uses separate frequency bands for uplink and downlink transmission by the same subscriber.",
+  tip: "FDD separates communication directions by frequency.",
+},
+{
+  topic: "Multiple access",
+  type: "single",
+  prompt: "Which multiple-access technique requires precise synchronization?",
+  options: ["FDMA", "TDMA", "CDMA"],
+  answer: [1],
+  explanation:
+    "TDMA users share a carrier in assigned time slots, so transmissions must be synchronized to avoid overlap.",
+  tip: "Time-slot boundaries make synchronization essential in TDMA.",
+},
+{
+  topic: "Random access",
+  type: "single",
+  prompt: "A subscriber senses the medium and, if it is idle, transmits with probability p or defers with probability (1-p) until the next slot. Which protocol is this?",
+  options: [
+    "CSMA/CD",
+    "(1-p)-persistent CSMA",
+    "p-persistent CSMA",
+    "CSMA/CA",
+  ],
+  answer: [2],
+  explanation:
+    "In p-persistent CSMA, a station transmits with probability p when the channel is idle and defers with probability 1-p.",
+  tip: "The probability p in the protocol name is the chance of transmitting in an idle slot.",
+},
+{
+  topic: "Multiple access",
+  type: "single",
+  prompt: "Packet Radio Multiple Access schemes can be which of the following?",
+  options: [
+    "Contention-free only",
+    "Both contention-free and contention-based",
+    "Contention-based only",
+  ],
+  answer: [1],
+  explanation:
+    "Packet Radio Multiple Access schemes include both contention-based and contention-free approaches.",
+  tip: "Packet radio access is a family of schemes, not a single access strategy.",
+},
+{
+  topic: "Multiple access",
+  type: "multi",
+  prompt: "Which statements correctly describe SDMA, TDMA, and CDMA? Select every valid answer.",
+  options: [
+    "SDMA separates users by their different spatial positions or directions.",
+    "TDMA lets users share a frequency, assigning each a time slot.",
+    "CDMA lets users share a frequency at the same time using different codes.",
+  ],
+  answer: [0, 1, 2],
+  explanation:
+    "SDMA separates spatially, TDMA separates in time, and CDMA separates users using codes on shared time and frequency resources.",
+  tip: "Remember the resource dimension: space, time, or code.",
+},
+{
+  topic: "Cellular generations",
+  type: "multi",
+  prompt: "Which switching technique is matched with each generation or standard? Select every correct match.",
+  options: [
+    "GSM — circuit switching",
+    "EDGE — packet switching",
+    "UMTS — circuit and packet switching",
+    "LTE — packet switching",
+  ],
+  answer: [0, 1, 2, 3],
+  explanation:
+    "The supplied matching associates GSM with circuit switching, EDGE with packet switching, UMTS with both circuit- and packet-switched services, and LTE with packet switching.",
+  tip: "LTE is all-IP packet-switched; earlier generations supported circuit-switched voice.",
+},
+{
+  topic: "Cellular architecture",
+  type: "single",
+  prompt: "What is the call path between two mobile stations served by different base stations but the same BSC and MSC?",
+  options: [
+    "MS1 → BS1 → BS2 → MS2",
+    "MS1 → BS1 → BSC → BS2 → MS2",
+    "MS1 → BS1 → BSC → MSC → BSC → BS2 → MS2",
+    "None of the above",
+  ],
+  answer: [2],
+  explanation:
+    "The call is routed from the first mobile through its base station and the controller/core switching path to the destination base station and mobile.",
+  tip: "Trace the call through the network elements connecting the two base stations.",
+},
+{
+  topic: "Cellular architecture",
+  type: "single",
+  prompt: "In a basic cellular system, what are data links used for?",
+  options: [
+    "Carrying multiple-channel data from the cell site to the MTSO",
+    "Serving as the air interface between the BTS and BSC",
+    "Serving as an air interface between the CSE and MSU",
+    "Carrying data between PSTNs",
+  ],
+  answer: [0],
+  explanation:
+    "Backhaul data links carry aggregated traffic and signaling between cell sites and the Mobile Telephone Switching Office (MTSO).",
+  tip: "The radio air interface connects a mobile and base station; data links connect network infrastructure.",
+},
+{
+  topic: "Cellular architecture",
+  type: "boolean",
+  prompt: "A cellular system establishes calls among mobile subscribers and provides connectivity with landline subscribers.",
+  options: ["True", "False"],
+  answer: [0],
+  explanation:
+    "Cellular networks support calls between mobile users and interconnection with the public landline telephone network.",
+  tip: "The mobile network connects both its own subscribers and external telephone networks.",
+},
+{
+  topic: "Random access",
+  type: "single",
+  prompt: "Which listed mechanism reserves access opportunities to help prevent potential packet collisions before data transmission?",
+  options: ["Pure ALOHA", "PRMA", "Slotted ALOHA"],
+  answer: [1],
+  explanation:
+    "Packet Reservation Multiple Access (PRMA) uses reservation opportunities to reduce contention for subsequent packet transmissions.",
+  tip: "PRMA combines packet access with reservation of transmission slots.",
+},
+{
+  topic: "5G",
+  type: "single",
+  prompt: "Which beam-based multiple-access technique is identified as a way to improve spectrum efficiency with massive MIMO?",
+  options: ["FDMA", "TDMA", "CDMA", "BDMA"],
+  answer: [3],
+  explanation:
+    "The supplied description refers to Beam Division Multiple Access (BDMA), which separates transmissions by spatial beams.",
+  tip: "Beam-based access uses spatial separation to serve users.",
+},
+{
+  topic: "FDD",
+  type: "single",
+  prompt: "Frequency Division Duplex (FDD) can be used in which systems?",
+  options: [
+    "TDMA systems",
+    "All of them",
+    "Only analog FDMA systems",
+  ],
+  answer: [1],
+  explanation:
+    "FDD is a duplexing arrangement and can be used alongside different multiple-access methods, including TDMA.",
+  tip: "Duplexing (FDD/TDD) and multiple access (FDMA/TDMA/CDMA) describe different aspects of a radio system.",
+},
+{
+  topic: "AMPS",
+  type: "single",
+  prompt: "In FDMA cellular systems such as AMPS, how are voice channels used?",
+  options: [
+    "Only for signaling data",
+    "As setup channels when needed",
+    "Only for voice traffic",
+  ],
+  answer: [2],
+  explanation:
+    "In the supplied AMPS model, voice channels carry voice traffic; setup signaling uses control channels.",
+  tip: "Distinguish voice channels from the dedicated control channels used for setup.",
+},
+{
+  topic: "Frequency reuse",
+  type: "single",
+  prompt: "As cluster size K increases, what happens to C/I and spectrum efficiency?",
+  options: [
+    "C/I increases and spectrum efficiency decreases.",
+    "C/I decreases and spectrum efficiency increases.",
+    "Both C/I and spectrum efficiency increase.",
+    "Both C/I and spectrum efficiency decrease.",
+  ],
+  answer: [0],
+  explanation:
+    "A larger cluster increases co-channel separation and typically improves C/I, but each cell receives a smaller share of the available channels, reducing spectrum efficiency.",
+  tip: "Larger reuse clusters improve interference conditions at the cost of capacity per unit area.",
+},
 ];
