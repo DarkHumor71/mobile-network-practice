@@ -253,8 +253,8 @@ window.quizQuestions = [
     type: "single",
     prompt:
       "At a cell edge, six first-tier co-channel cells contribute equally. If the reuse ratio is Q = 6 and the path-loss exponent is 4, what is C/I approximately?",
-    options: ["22.5 dB", "19.2 dB", "None of these", "17 dB", "18 dB"],
-    answer: [0],
+    options: ["22.5 dB", "19.2 dB", "23.334 dB", "17 dB", "18 dB"],
+    answer: [2],
     explanation:
       "For the six first-tier interferers in this assessment, the expected approximate C/I is 22.5 dB.",
     tip: "This is an approximate first-tier co-channel estimate; use the answer convention specified for this exercise.",
@@ -1168,7 +1168,7 @@ window.quizQuestions = [
       "Use receiver diversity.",
       "Place every co-channel transmitter closer to the same mobile.",
     ],
-    answer: [0, 1, 2, 3],
+    answer: [0, 1, 3],
     explanation:
       "Greater co-channel separation, careful antenna heights, directional patterns, and receiver diversity are all established interference-reduction methods.",
     tip: "The first four manage distance, propagation, direction, or fading; the last option worsens interference.",
@@ -1354,1037 +1354,1057 @@ window.quizQuestions = [
       "Wi-Fi uses CSMA/CA, which attempts to avoid collisions because a radio generally cannot reliably detect a collision while transmitting.",
     tip: "Wireless LANs avoid collisions; classic shared Ethernet used collision detection.",
   },
-{
-  topic: "Mobile services",
-  type: "multi",
-  prompt:
-    "Which are common subscriber features offered by cellular networks? Select every valid answer.",
-  options: [
-    "Automatic roaming between service areas",
-    "Call waiting during an active call",
-    "Call forwarding to another destination",
-    "SMS messaging",
-    "Voice blocking as a subscriber feature",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "Roaming, call waiting, call forwarding, and SMS are common cellular services. Voice blocking is not a subscriber feature in this list.",
-  tip: "Think about services a user can enable or use—not network problems such as congestion.",
-},
-{
-  topic: "TDMA efficiency",
-  type: "single",
-  prompt:
-    "A TDMA frame contains 156.25 total bits, of which 40.25 are overhead. About what percentage remains for useful frame content?",
-  options: ["74.2%", "25.8%", "80.5%", "96.0%"],
-  answer: [0],
-  explanation:
-    "Useful fraction = (156.25 − 40.25) / 156.25 = 116 / 156.25 ≈ 0.742, or 74.2%.",
-  tip: "Subtract overhead first, then divide useful bits by total bits.",
-},
-{
-  topic: "TDMA efficiency",
-  type: "single",
-  prompt:
-    "A 5 ms TDMA slot has 0.25 ms of pilot overhead and 0.25 ms of guard time. What fraction of the slot remains for payload timing?",
-  options: ["90%", "10%", "80%", "95%"],
-  answer: [0],
-  explanation:
-    "Slot efficiency = (5 − 0.25 − 0.25) / 5 = 4.5 / 5 = 0.90, or 90%.",
-  tip: "Remove both overhead intervals before dividing by the full slot duration.",
-},
-{
-  topic: "Mobile registration",
-  type: "single",
-  prompt:
-    "After a newly powered-on mobile scans the control channels, what should it do next to select a serving cell?",
-  options: [
-    "Choose the cell site with the strongest received signal.",
-    "Transmit on every voice channel at once.",
-    "Connect directly to the PSTN.",
-    "Wait for a handoff before registering.",
-  ],
-  answer: [0],
-  explanation:
-    "The mobile compares received signal strength on the scanned control channels, selects a suitable strongest cell site, and then registers.",
-  tip: "Scan first, compare signal strength, then register with the selected site.",
-},
-{
-  topic: "Call setup",
-  type: "single",
-  prompt:
-    "A mobile's call request has reached the switching office. What normally happens before a traffic channel is assigned?",
-  options: [
-    "The request is authenticated.",
-    "The mobile is removed from the location register.",
-    "All neighboring cells are shut down.",
-    "The call is immediately routed to a paging receiver.",
-  ],
-  answer: [0],
-  explanation:
-    "The network authenticates the request before directing the serving cell site to allocate a voice or traffic channel.",
-  tip: "Authentication is part of call setup, before the traffic connection is granted.",
-},
-{
-  topic: "Call setup",
-  type: "single",
-  prompt:
-    "When the network originates a call to a mobile, how does the handset recognize that a page is intended for it?",
-  options: [
-    "It matches the identity carried in the page to its own ID.",
-    "It detects a change in its battery voltage.",
-    "It reads the called party's voice channel before paging.",
-    "It compares the page with an IMEI broadcast by every cell.",
-  ],
-  answer: [0],
-  explanation:
-    "The network sends pages over control channels, and the intended handset recognizes its own identity in the page.",
-  tip: "Paging is an addressed alert: the mobile listens for its own identifier.",
-},
-{
-  topic: "Network architecture",
-  type: "multi",
-  prompt:
-    "Which functions can be coordinated by a Mobile Telephone Switching Office (MTSO)? Select every valid answer.",
-  options: [
-    "Switching calls",
-    "Managing subscriber mobility",
-    "Billing support",
-    "Charging the mobile handset battery over the air",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "The MTSO coordinates switching, mobility management, and related billing functions; charging the handset is not a switching-office role.",
-  tip: "The MTSO coordinates the network side of a call, not the handset's physical power supply.",
-},
-{
-  topic: "Network architecture",
-  type: "single",
-  prompt:
-    "Which public network can carry a call between mobile subscribers served by different MTSOs?",
-  options: ["PSTN", "Reverse access channel", "VLR", "Radio paging transmitter"],
-  answer: [0],
-  explanation:
-    "The Public Switched Telephone Network (PSTN) interconnects switching offices and other telephone networks.",
-  tip: "When two mobile systems need an external network path, think telephone-network interconnection.",
-},
-{
-  topic: "Cell-site equipment",
-  type: "multi",
-  prompt:
-    "Which equipment can be found at a cellular cell site? Select every valid answer.",
-  options: [
-    "Transmit/receive antennas",
-    "Radio transceivers",
-    "Data links toward the switching office",
-    "Power equipment",
-    "A subscriber's SIM card",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "Cell-site equipment includes antennas, transceivers, backhaul/data links, and power systems. A SIM belongs in a subscriber device.",
-  tip: "The site provides radio access and a network connection; subscriber credentials stay with the user.",
-},
-{
-  topic: "Mobile equipment",
-  type: "single",
-  prompt:
-    "What is the primary purpose of the SIM in a mobile subscriber unit?",
-  options: [
-    "Identify the subscriber and subscription",
-    "Amplify the cell site's transmitted signal",
-    "Assign frequencies to the cellular cluster",
-    "Replace the cell-site transceiver",
-  ],
-  answer: [0],
-  explanation:
-    "The Subscriber Identity Module stores information used to identify and authenticate the subscriber's service.",
-  tip: "A SIM is about subscriber identity, not radio coverage or cell planning.",
-},
-{
-  topic: "Traffic engineering",
-  type: "single",
-  prompt:
-    "Seven calls, each lasting six minutes, are offered during a 30-minute interval. What is the average offered traffic?",
-  options: ["1.4 Erlangs", "0.7 Erlangs", "2.3 Erlangs", "42 Erlangs"],
-  answer: [0],
-  explanation:
-    "Total offered call time is 7 × 6 = 42 minutes. Divide by the 30-minute observation interval: 42 / 30 = 1.4 Erlangs.",
-  tip: "Erlangs are busy-time divided by observation-time.",
-},
-{
-  topic: "Traffic engineering",
-  type: "single",
-  prompt:
-    "Which statement correctly distinguishes offered traffic from effective traffic?",
-  options: [
-    "Offered traffic is requested load; effective traffic is the load successfully carried.",
-    "Offered traffic is only successful calls; effective traffic includes blocked calls.",
-    "They are always equal, even when every channel is busy.",
-    "Effective traffic measures average call duration only.",
-  ],
-  answer: [0],
-  explanation:
-    "Offered load represents demand presented to the system. Effective or carried load is the traffic that the system actually serves.",
-  tip: "Demand offered can exceed what limited channels successfully carry.",
-},
-{
-  topic: "Traffic engineering",
-  type: "single",
-  prompt:
-    "What does one Erlang of traffic mean in practical channel-occupancy terms?",
-  options: [
-    "One channel is occupied continuously on average.",
-    "One call is made every second.",
-    "One channel is idle for an entire hour.",
-    "One user is assigned one permanent channel.",
-  ],
-  answer: [0],
-  explanation:
-    "One Erlang represents a continuous average occupancy equivalent to one channel being busy for the whole observation period.",
-  tip: "Erlang measures occupancy, not a count of calls by itself.",
-},
-{
-  topic: "Traffic engineering",
-  type: "single",
-  prompt:
-    "If 120 users each offer 0.1 Erlang, what is the system's total offered traffic?",
-  options: ["12 Erlangs", "1.2 Erlangs", "120 Erlangs", "0.1 Erlang"],
-  answer: [0],
-  explanation:
-    "Total traffic is the number of users times the average traffic per user: 120 × 0.1 = 12 Erlangs.",
-  tip: "Add many equal user loads by multiplying the per-user Erlangs by the user count.",
-},
-{
-  topic: "Traffic engineering",
-  type: "single",
-  prompt:
-    "Using ηtr = At / Nd, what is the trunking-efficiency ratio for 18 Erlangs carried across 24 channels?",
-  options: ["0.75", "1.33", "6", "42"],
-  answer: [0],
-  explanation:
-    "Divide carried traffic by the channel count: 18 / 24 = 0.75 Erlangs per channel.",
-  tip: "Keep the numerator as traffic and the denominator as the number of data channels.",
-},
-{
-  topic: "Random access",
-  type: "single",
-  prompt:
-    "How does Reservation ALOHA reduce contention for later data transmissions?",
-  options: [
-    "Users reserve future slots before sending their data.",
-    "Every user receives a permanent frequency band.",
-    "The base station retransmits every collided packet itself.",
-    "Users transmit only after a handoff.",
-  ],
-  answer: [0],
-  explanation:
-    "Reservation ALOHA uses a reservation step to assign future transmission slots, reducing repeated contention for those reserved data transmissions.",
-  tip: "The name gives the clue: reserve a slot, then use it.",
-},
-{
-  topic: "Multiple access",
-  type: "multi",
-  prompt:
-    "Which statements describe contention-based access? Select every valid answer.",
-  options: [
-    "Users may attempt access without a dedicated prior allocation.",
-    "Random access and collision-resolution methods are examples.",
-    "The approach can have relatively low coordination overhead.",
-    "Collisions can occur when users transmit together.",
-    "Every user is guaranteed a private frequency before attempting access.",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "Contention-based methods avoid assigning every transmission a dedicated resource in advance. This reduces coordination overhead but allows collisions.",
-  tip: "Less pre-coordination is convenient, but simultaneous attempts can collide.",
-},
-{
-  topic: "Multiple access",
-  type: "single",
-  prompt:
-    "How does SDMA (also called beam division in some material) separate users who may share time and frequency?",
-  options: [
-    "By serving them in different spatial directions with antenna beams",
-    "By assigning each user a different call duration",
-    "By requiring every user to transmit on a different carrier frequency",
-    "By giving each user a separate telephone network",
-  ],
-  answer: [0],
-  explanation:
-    "Space Division Multiple Access separates users spatially, often using directional beams or advanced multi-antenna techniques.",
-  tip: "SDMA adds space as a resource dimension.",
-},
-{
-  topic: "FDMA",
-  type: "multi",
-  prompt:
-    "Which are characteristics or trade-offs of FDMA? Select every valid answer.",
-  options: [
-    "Guard bands help separate adjacent channels.",
-    "Uneven traffic can leave fixed bandwidth underused.",
-    "The technique is relatively straightforward to implement.",
-    "All users must share one carrier in synchronized time slots.",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "FDMA divides spectrum into frequency channels and uses guard spacing. It is straightforward, but fixed allocations can waste capacity when traffic is uneven.",
-  tip: "FDMA separates by frequency; TDMA separates by time.",
-},
-{
-  topic: "TDMA",
-  type: "single",
-  prompt:
-    "What timing requirement is a notable TDMA implementation challenge?",
-  options: [
-    "Precise synchronization between transmitters and time slots",
-    "Permanent separation of every user into a unique frequency band",
-    "A different spreading code for every packet",
-    "An inability to encrypt digital signals",
-  ],
-  answer: [0],
-  explanation:
-    "TDMA users share a carrier in different time slots, so their transmissions must be synchronized to avoid overlapping slots.",
-  tip: "When time is divided into slots, timing errors can make users collide.",
-},
-{
-  topic: "FDMA capacity",
-  type: "single",
-  prompt:
-    "A 5 MHz allocation is divided into 25 kHz simplex channels. Ignoring guard bands, how many full-duplex calls can it support?",
-  options: ["100", "200", "25", "400"],
-  answer: [0],
-  explanation:
-    "Each full-duplex call needs two 25 kHz simplex channels, so 5,000 / (2 × 25) = 100 calls.",
-  tip: "Count both directions for every full-duplex call.",
-},
-{
-  topic: "AMPS",
-  type: "single",
-  prompt:
-    "A system has 400 full-duplex channels and a reuse cluster of K = 4. How many channels are assigned to each cell in the cluster?",
-  options: ["100", "400", "1,600", "4"],
-  answer: [0],
-  explanation:
-    "Divide the cluster's 400 channels among four cells: 400 / 4 = 100 channels per cell.",
-  tip: "With an even reuse plan, channels per cell equal total cluster channels divided by K.",
-},
-{
-  topic: "AMPS",
-  type: "single",
-  prompt:
-    "In the AMPS frequency plan described in the Gizmo material, what duplex spacing separates the mobile and cell-site transmit bands?",
-  options: ["45 MHz", "5 MHz", "25 kHz", "200 kHz"],
-  answer: [0],
-  explanation:
-    "The cited AMPS plan places mobile and cell-site transmit bands 45 MHz apart.",
-  tip: "Duplex spacing is the frequency separation between the paired uplink and downlink bands.",
-},
-{
-  topic: "Channel assignment",
-  type: "multi",
-  prompt:
-    "Which statements correctly distinguish fixed, dynamic, and hybrid channel assignment? Select every valid answer.",
-  options: [
-    "Fixed assignment gives cells predetermined channels.",
-    "Dynamic assignment selects an available channel from a shared pool as needed.",
-    "Hybrid assignment combines fixed and dynamic approaches.",
-    "Dynamic assignment means every cell permanently keeps the same channels.",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "FCA preassigns channels, DCA chooses from available resources when needed, and HCA combines features of both.",
-  tip: "Fixed = planned in advance; dynamic = selected as demand occurs; hybrid = a mix.",
-},
-{
-  topic: "Channel borrowing",
-  type: "single",
-  prompt:
-    "In a borrowing scheme, what are the overloaded cell and the cell lending a channel called?",
-  options: [
-    "Acceptor and donor, respectively",
-    "Donor and acceptor, respectively",
-    "Serving and paging, respectively",
-    "Mobile and switching, respectively",
-  ],
-  answer: [0],
-  explanation:
-    "The overloaded acceptor cell borrows a channel from a neighboring donor cell, provided reuse constraints remain satisfied.",
-  tip: "The acceptor receives; the donor lends.",
-},
-{
-  topic: "Channel borrowing",
-  type: "single",
-  prompt:
-    "When prioritizing channels for local calls and borrowing, which order best preserves flexibility?",
-  options: [
-    "Keep high-priority channels for local calls and consider lower-priority channels for borrowing first.",
-    "Borrow the highest-priority channel first and reserve the lowest for local calls.",
-    "Borrow only channels already in use.",
-    "Assign every channel to the same cell permanently.",
-  ],
-  answer: [0],
-  explanation:
-    "The material's prioritization approach uses higher-priority channels for local calls and begins borrowing from lower-priority channels.",
-  tip: "Protect the most valuable channels for the cell's own traffic.",
-},
-{
-  topic: "Channel sharing",
-  type: "multi",
-  prompt:
-    "Which statements describe temporary channel sharing between sectors? Select every valid answer.",
-  options: [
-    "It can improve trunking efficiency.",
-    "A cyclic sharing pattern may be used.",
-    "A shared channel can be returned when it becomes available to its original sector.",
-    "It permanently increases the licensed spectrum.",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "Temporary sharing lets sectors use spare resources more efficiently; cyclic rules can coordinate sharing, and channels can return to their home sector.",
-  tip: "Sharing redistributes existing channels; it does not create new spectrum.",
-},
-{
-  topic: "Cell planning",
-  type: "single",
-  prompt:
-    "What is the key idea of an underlaid-cell arrangement?",
-  options: [
-    "A smaller cell at a large-cell site can use a second frequency-reuse pattern.",
-    "Every large cell is replaced by a single omnidirectional antenna.",
-    "Two mobile subscribers must share one SIM.",
-    "The network disables frequency reuse.",
-  ],
-  answer: [0],
-  explanation:
-    "An underlaid arrangement places a smaller cell within a larger-cell footprint, allowing two reuse patterns to serve different demand conditions.",
-  tip: "Underlaid means a smaller coverage layer exists inside a larger one.",
-},
-{
-  topic: "Channel assignment",
-  type: "multi",
-  prompt:
-    "Besides the available channel count, which inputs can affect channel assignment? Select every valid answer.",
-  options: [
-    "Call-arrival rate",
-    "Call duration",
-    "Target call-blocking probability",
-    "Target call-dropping rate",
-    "Channels reserved for handoffs",
-    "Handset color",
-  ],
-  answer: [0, 1, 2, 3, 4],
-  explanation:
-    "Assignment decisions account for offered traffic, service targets, and handoff reserves as well as the channel supply.",
-  tip: "Think demand, quality targets, and protected handoff capacity.",
-},
-{
-  topic: "Handoff control",
-  type: "multi",
-  prompt:
-    "Which statements correctly describe NCHO, MAHO, and MCHO? Select every valid answer.",
-  options: [
-    "In NCHO, the network makes the handoff decision using network measurements.",
-    "In MAHO, the mobile measures neighboring signals and reports them; the network decides.",
-    "In MCHO, the mobile makes the handoff decision.",
-    "In MAHO, the mobile always makes the final handoff decision.",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "NCHO places measurement and decision in the network, MAHO has the mobile provide measurements while the network decides, and MCHO gives the decision to the mobile.",
-  tip: "For MAHO, remember: mobile-assisted measurements, network-controlled decision.",
-},
-{
-  topic: "Handoffs",
-  type: "multi",
-  prompt:
-    "Which are characteristics of a soft handoff? Select every valid answer.",
-  options: [
-    "The new connection is established before the old one is released.",
-    "The mobile may use more than one channel or cell connection briefly.",
-    "The overlap can improve call continuity.",
-    "The old connection must always be broken before a new one begins.",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "Soft handoff is make-before-break: overlapping connections can improve reliability, though they may consume multiple resources temporarily.",
-  tip: "Soft handoff keeps the old link while the new link is brought up.",
-},
-{
-  topic: "Handoffs",
-  type: "multi",
-  prompt:
-    "Which situations may trigger a handoff? Select every valid answer.",
-  options: [
-    "The mobile crosses a cell boundary.",
-    "A coverage hole or weak signal threatens the call.",
-    "A channel change is needed to address interference.",
-    "A cell needs to free capacity for another call.",
-    "The network wants to increase the mobile's screen brightness.",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "Handoffs can maintain coverage, manage interference, or move a connection to free capacity—not only follow geographic movement.",
-  tip: "A handoff is a connection-management tool, not just a map-boundary event.",
-},
-{
-  topic: "Cell splitting",
-  type: "single",
-  prompt:
-    "What distinguishes dynamic cell splitting from a permanent split planned in advance?",
-  options: [
-    "Dynamic splitting responds to current traffic demand.",
-    "Dynamic splitting never changes cell size.",
-    "Permanent splitting requires no frequency-plan changes.",
-    "Dynamic splitting is performed only when a call ends.",
-  ],
-  answer: [0],
-  explanation:
-    "Dynamic splitting adjusts the use of cell resources according to real-time traffic, while permanent splitting is planned and installed ahead of time.",
-  tip: "Dynamic means the network can react to demand as it changes.",
-},
-{
-  topic: "Frequency management",
-  type: "multi",
-  prompt:
-    "Which tasks belong to frequency management? Select every valid answer.",
-  options: [
-    "Designating control and traffic channels",
-    "Numbering channels",
-    "Grouping channels for cell use",
-    "Planning channel allocation to improve spectrum efficiency",
-    "Measuring each subscriber's screen size",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "Frequency management organizes, numbers, groups, and assigns the available channels to meet interference, capacity, and service goals.",
-  tip: "It is the planning and organization of radio channels—not handset specifications.",
-},
-{
-  topic: "Random access",
-  type: "single",
-  prompt:
-    "What are the ideal maximum throughputs of pure ALOHA and slotted ALOHA, respectively?",
-  options: [
-    "About 0.184 and 0.368",
-    "About 0.368 and 0.184",
-    "About 0.5 and 1.0",
-    "Both are exactly 1.0",
-  ],
-  answer: [0],
-  explanation:
-    "Pure ALOHA peaks at 1/(2e) ≈ 0.184, while slotted ALOHA peaks at 1/e ≈ 0.368 because slot alignment shortens the vulnerable period.",
-  tip: "Slotted ALOHA approximately doubles the ideal peak throughput.",
-},
-{
-  topic: "FDD",
-  type: "single",
-  prompt:
-    "In an FDD link, what separates uplink and downlink transmissions?",
-  options: [
-    "A fixed frequency spacing between paired bands",
-    "A time slot on the same carrier only",
-    "A different SIM card for each direction",
-    "A paging message between every symbol",
-  ],
-  answer: [0],
-  explanation:
-    "Frequency Division Duplex uses separate uplink and downlink frequency bands, separated by a duplex spacing.",
-  tip: "FDD separates directions by frequency; TDD separates them by time.",
-},
-{
-  topic: "Cellular fundamentals",
-  type: "multi",
-  prompt: "Cellular communication is designed to enhance which of the following? Select every valid answer.",
-  options: [
-    "System capacity",
-    "Spectrum efficiency",
-    "Coverage area",
-    "Desired signal quality",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "Cellular design uses many techniques to improve capacity, spectrum use, coverage, and the quality of the desired signal.",
-  tip: "Cellular systems balance several goals rather than optimizing only one.",
-},
-{
-  topic: "Cellular fundamentals",
-  type: "multi",
-  prompt: "Which limitations are associated with conventional radio communication systems? Select every valid answer.",
-  options: [
-    "Low-power transmission",
-    "Limited services",
-    "Small coverage area",
-    "Inefficient spectrum utilization",
-  ],
-  answer: [1, 2, 3],
-  explanation:
-    "The supplied answer key identifies limited services, small coverage, and inefficient spectrum use as limitations; low-power transmission is not selected.",
-  tip: "Cellular architecture was developed in part to improve service, coverage, and reuse of scarce spectrum.",
-},
-{
-  topic: "Cell planning",
-  type: "multi",
-  prompt: "Why is a hexagon used as the theoretical cell shape in cellular planning? Select every valid answer.",
-  options: [
-    "It reduces the occurrence of handovers.",
-    "For a given radius, it has the largest area.",
-    "It offers a practical, non-overlapping approximation of radio coverage.",
-    "It matches the shape of real-world coverage.",
-  ],
-  answer: [1, 2],
-  explanation:
-    "Hexagons tile a plane without gaps and are a useful idealization of a circular coverage area. Real cells do not have perfectly regular boundaries.",
-  tip: "The hexagon is a planning model, not a claim that real radio coverage is hexagonal.",
-},
-{
-  topic: "Cell planning",
-  type: "multi",
-  prompt: "Which constraints affect the shape of actual cells? Select every valid answer.",
-  options: [
-    "None of them",
-    "Non-uniform population densities",
-    "Man-made structures",
-    "Natural irregular terrain",
-  ],
-  answer: [1, 2, 3],
-  explanation:
-    "Population distribution, buildings, and terrain all affect propagation and the practical boundaries of cells.",
-  tip: "Actual coverage follows propagation and demand, not a geometric template.",
-},
-{
-  topic: "Cellular fundamentals",
-  type: "single",
-  prompt: "What is a major factor affecting cellular system design?",
-  options: [
-    "Noise",
-    "Power consumption",
-    "Geographic area",
-    "Interference",
-  ],
-  answer: [3],
-  explanation:
-    "Best-effort key: interference is the most likely intended answer because frequency reuse makes interference a central cellular-design constraint. The source marking was unclear.",
-  tip: "Reuse improves capacity, but co-channel interference must be controlled.",
-},
-{
-  topic: "Cell sectoring",
-  type: "single",
-  prompt: "What is the main aim of cell sectoring?",
-  options: [
-    "Reduce co-channel interference and decrease C/I",
-    "Reduce co-channel interference and increase C/I by increasing cluster size K",
-    "Reduce co-channel interference and decrease C/I by decreasing cluster size K",
-    "Reduce co-channel interference and increase C/I without increasing cluster size K",
-  ],
-  answer: [3],
-  explanation:
-    "Directional sector antennas reduce the number of interfering co-channel cells seen by a sector, improving C/I without requiring a larger cluster.",
-  tip: "Sectoring improves the interference environment while preserving the reuse cluster size.",
-},
-{
-  topic: "Cell sectoring",
-  type: "single",
-  prompt: "Which listed advantage of cell sectoring is correct?",
-  options: [
-    "Enhancing trunking efficiency",
-    "Lowering transmission power",
-    "Increasing coverage area",
-    "Enhancing spectrum efficiency",
-  ],
-  answer: [3],
-  explanation:
-    "Sectoring can improve spectrum efficiency by reducing interference and allowing more aggressive frequency reuse.",
-  tip: "Sectoring is chiefly an interference and capacity technique.",
-},
-{
-  topic: "Frequency reuse",
-  type: "single",
-  prompt: "When cluster size K is minimized, what happens to overall system capacity C?",
-  options: [
-    "It increases.",
-    "It decreases.",
-    "It remains unchanged.",
-    "It becomes zero.",
-  ],
-  answer: [0],
-  explanation:
-    "A smaller reuse cluster allows the available channels to be reused more frequently, increasing capacity, though co-channel interference also rises.",
-  tip: "Smaller K means more frequent reuse and greater capacity, with an interference trade-off.",
-},
-{
-  topic: "Frequency reuse",
-  type: "single",
-  prompt: "Minimizing cluster size K will have which effects?",
-  options: [
-    "Increase co-channel interference and decrease system capacity",
-    "Decrease co-channel interference and system capacity",
-    "Increase co-channel interference and system capacity",
-    "Decrease co-channel interference and increase system capacity",
-  ],
-  answer: [2],
-  explanation:
-    "A smaller cluster increases how often frequencies are reused, which raises both capacity and co-channel interference.",
-  tip: "Frequency reuse trades a higher interference level for more capacity.",
-},
-{
-  topic: "Frequency reuse",
-  type: "single",
-  prompt: "What is a likely effect of increasing capacity through frequency reuse?",
-  options: [
-    "Wider coverage",
-    "A decrease in co-channel interference",
-    "Better signal quality",
-    "An increase in co-channel interference",
-  ],
-  answer: [3],
-  explanation:
-    "More aggressive reuse places co-channel cells closer together, which generally increases co-channel interference.",
-  tip: "Capacity gains from reuse can come with a signal-quality cost.",
-},
-{
-  topic: "Cell splitting",
-  type: "single",
-  prompt: "With the supplied cell-splitting model, how do the number of clusters over the coverage area and overall system capacity change?",
-  options: [
-    "Clusters increase; capacity decreases.",
-    "Clusters decrease; capacity remains the same.",
-    "Clusters increase; capacity increases.",
-    "Clusters decrease; capacity increases.",
-  ],
-  answer: [3],
-  explanation:
-    "The supplied answer key indicates that splitting increases the number of smaller cells, so fewer complete reuse clusters are needed across the same coverage area while capacity increases.",
-  tip: "Cell splitting adds smaller cells to serve higher traffic density.",
-},
-{
-  topic: "Cell splitting",
-  type: "single",
-  prompt: "After one cell split, what is the new capacity relative to the old capacity?",
-  options: ["The same", "Twice as high", "Three times as high", "Half as high"],
-  answer: [1],
-  explanation:
-    "In the simplified model, dividing one cell into two smaller cells doubles the number of cells reusing the channel set and therefore doubles capacity.",
-  tip: "This twofold result assumes the simplified one-cell-to-two model.",
-},
-{
-  topic: "Co-channel interference",
-  type: "single",
-  prompt: "Which method reduces co-channel interference?",
-  options: [
-    "Lowering antenna heights at the cell site",
-    "Using omnidirectional antennas at the cell site",
-    "Increasing the separation between two co-channel cells",
-    "All of them",
-  ],
-  answer: [2],
-  explanation:
-    "Increasing the separation between co-channel cells reduces the interference power received from the other cell.",
-  tip: "Greater reuse distance generally means less co-channel interference.",
-},
-{
-  topic: "Antennas",
-  type: "single",
-  prompt: "At what point is antenna Half Power Beamwidth (HPBW) measured?",
-  options: [
-    "Where the pattern decreases by 50% from the peak of a side lobe",
-    "Where the pattern decreases by 3 dB from the peak of the main beam",
-    "Where the pattern increases by 3 dB from the peak of a side lobe",
-    "Where the pattern increases by 50% from the peak of the main beam",
-  ],
-  answer: [1],
-  explanation:
-    "HPBW is the angular width between the points where power falls to half its peak value, corresponding to -3 dB from the main-beam peak.",
-  tip: "Half power corresponds to a 3 dB decrease in power.",
-},
-{
-  topic: "Antennas",
-  type: "single",
-  prompt: "What does using two antennas at a base station provide?",
-  options: [
-    "Reduction in interference",
-    "Security",
-    "Diversity",
-    "Enhancement in the coverage area",
-  ],
-  answer: [2],
-  explanation:
-    "A pair of antennas can provide diversity reception, helping mitigate fading by combining or selecting signals with different propagation paths.",
-  tip: "Antenna diversity combats fading; it is not simply an increase in coverage area.",
-},
-{
-  topic: "Mobile initialization",
-  type: "single",
-  prompt: "After a mobile is switched on, which channels does it first scan during initialization?",
-  options: [
-    "All reverse control channels, selecting the strongest",
-    "All voice channels, selecting the strongest",
-    "All forward control channels, selecting the strongest",
-    "All forward control channels, selecting the weakest",
-  ],
-  answer: [2],
-  explanation:
-    "The mobile scans forward control channels and selects the strongest suitable one to begin system acquisition.",
-  tip: "Initialization starts by finding a usable forward control channel.",
-},
-{
-  topic: "Handoffs",
-  type: "boolean",
-  prompt: "An intra-cell handover takes place when a mobile moves from one sector to another within the same cell.",
-  options: ["True", "False"],
-  answer: [0],
-  explanation:
-    "A transition between sectors belonging to the same cell is an intra-cell handover.",
-  tip: "A sector change can require a handover even when the cell site remains the same.",
-},
-{
-  topic: "Handoffs",
-  type: "boolean",
-  prompt: "If a mobile reaches a signal-strength hole not covered by any cell, a handoff is made automatically.",
-  options: ["True", "False"],
-  answer: [1],
-  explanation:
-    "Best-effort key: likely false. A handoff needs a suitable target cell; if no cell covers the area, the connection may be lost instead. The source wording and marked answer were unclear.",
-  tip: "Handoff can move a connection to another available cell, but cannot create coverage where none exists.",
-},
-{
-  topic: "Channel borrowing",
-  type: "single",
-  prompt: "What is temporary channel sharing between a cell and a neighboring cell called?",
-  options: [
-    "Cell sectoring",
-    "Channel borrowing",
-    "Cell splitting",
-  ],
-  answer: [1],
-  explanation:
-    "Channel borrowing temporarily lets an overloaded cell use an available channel from a donor cell, subject to interference constraints.",
-  tip: "The overloaded cell borrows; the donor cell lends.",
-},
-{
-  topic: "Channel borrowing",
-  type: "multi",
-  prompt: "In a cellular network, from where can a cell borrow additional channels? Select every valid answer.",
-  options: [
-    "Another sector of the same cell site",
-    "Another cell in the same cluster that has free channels",
-    "Another communication system such as Wi-Fi",
-    "A cell in a different cluster that has free channels",
-  ],
-  answer: [0, 1],
-  explanation:
-    "Best-effort key: the supplied notes identify another sector at the same site and a cell in the same cluster as sources. The scan does not clearly establish the selected choices; actual borrowing is constrained by the frequency plan and interference rules.",
-  tip: "A donor must have a compatible free channel that can be used without violating reuse constraints.",
-},
-{
-  topic: "Channel assignment",
-  type: "single",
-  prompt: "In an overlapped-cells channel-assignment scheme, smaller cells are activated or deactivated according to what?",
-  options: [
-    "Interference",
-    "Number of channels",
-    "Traffic",
-    "Total power consumption",
-  ],
-  answer: [2],
-  explanation:
-    "The smaller cells can be activated or deactivated in response to traffic demand.",
-  tip: "Overlaid cell layers help adapt capacity to changing demand.",
-},
-{
-  topic: "Frequency management",
-  type: "boolean",
-  prompt: "Frequency management and channel assignment help achieve spectrum-utilization objectives and adapt to traffic density.",
-  options: ["True", "False"],
-  answer: [0],
-  explanation:
-    "Frequency management organizes channel use, while assignment methods can adapt available channels to traffic and system requirements.",
-  tip: "Good channel planning balances efficient spectrum use with changing demand.",
-},
-{
-  topic: "FDD",
-  type: "single",
-  prompt: "What does Frequency Division Duplex (FDD) separate?",
-  options: [
-    "Subscribers in the same cell on the downlink",
-    "Subscribers in the same cell on the uplink",
-    "The uplink and downlink of the same subscriber",
-    "None of the choices",
-  ],
-  answer: [2],
-  explanation:
-    "FDD uses separate frequency bands for uplink and downlink transmission by the same subscriber.",
-  tip: "FDD separates communication directions by frequency.",
-},
-{
-  topic: "Multiple access",
-  type: "single",
-  prompt: "Which multiple-access technique requires precise synchronization?",
-  options: ["FDMA", "TDMA", "CDMA"],
-  answer: [1],
-  explanation:
-    "TDMA users share a carrier in assigned time slots, so transmissions must be synchronized to avoid overlap.",
-  tip: "Time-slot boundaries make synchronization essential in TDMA.",
-},
-{
-  topic: "Random access",
-  type: "single",
-  prompt: "A subscriber senses the medium and, if it is idle, transmits with probability p or defers with probability (1-p) until the next slot. Which protocol is this?",
-  options: [
-    "CSMA/CD",
-    "(1-p)-persistent CSMA",
-    "p-persistent CSMA",
-    "CSMA/CA",
-  ],
-  answer: [2],
-  explanation:
-    "In p-persistent CSMA, a station transmits with probability p when the channel is idle and defers with probability 1-p.",
-  tip: "The probability p in the protocol name is the chance of transmitting in an idle slot.",
-},
-{
-  topic: "Multiple access",
-  type: "single",
-  prompt: "Packet Radio Multiple Access schemes can be which of the following?",
-  options: [
-    "Contention-free only",
-    "Both contention-free and contention-based",
-    "Contention-based only",
-  ],
-  answer: [1],
-  explanation:
-    "Packet Radio Multiple Access schemes include both contention-based and contention-free approaches.",
-  tip: "Packet radio access is a family of schemes, not a single access strategy.",
-},
-{
-  topic: "Multiple access",
-  type: "multi",
-  prompt: "Which statements correctly describe SDMA, TDMA, and CDMA? Select every valid answer.",
-  options: [
-    "SDMA separates users by their different spatial positions or directions.",
-    "TDMA lets users share a frequency, assigning each a time slot.",
-    "CDMA lets users share a frequency at the same time using different codes.",
-  ],
-  answer: [0, 1, 2],
-  explanation:
-    "SDMA separates spatially, TDMA separates in time, and CDMA separates users using codes on shared time and frequency resources.",
-  tip: "Remember the resource dimension: space, time, or code.",
-},
-{
-  topic: "Cellular generations",
-  type: "multi",
-  prompt: "Which switching technique is matched with each generation or standard? Select every correct match.",
-  options: [
-    "GSM — circuit switching",
-    "EDGE — packet switching",
-    "UMTS — circuit and packet switching",
-    "LTE — packet switching",
-  ],
-  answer: [0, 1, 2, 3],
-  explanation:
-    "The supplied matching associates GSM with circuit switching, EDGE with packet switching, UMTS with both circuit- and packet-switched services, and LTE with packet switching.",
-  tip: "LTE is all-IP packet-switched; earlier generations supported circuit-switched voice.",
-},
-{
-  topic: "Cellular architecture",
-  type: "single",
-  prompt: "What is the call path between two mobile stations served by different base stations but the same BSC and MSC?",
-  options: [
-    "MS1 → BS1 → BS2 → MS2",
-    "MS1 → BS1 → BSC → BS2 → MS2",
-    "MS1 → BS1 → BSC → MSC → BSC → BS2 → MS2",
-    "None of the above",
-  ],
-  answer: [2],
-  explanation:
-    "The call is routed from the first mobile through its base station and the controller/core switching path to the destination base station and mobile.",
-  tip: "Trace the call through the network elements connecting the two base stations.",
-},
-{
-  topic: "Cellular architecture",
-  type: "single",
-  prompt: "In a basic cellular system, what are data links used for?",
-  options: [
-    "Carrying multiple-channel data from the cell site to the MTSO",
-    "Serving as the air interface between the BTS and BSC",
-    "Serving as an air interface between the CSE and MSU",
-    "Carrying data between PSTNs",
-  ],
-  answer: [0],
-  explanation:
-    "Backhaul data links carry aggregated traffic and signaling between cell sites and the Mobile Telephone Switching Office (MTSO).",
-  tip: "The radio air interface connects a mobile and base station; data links connect network infrastructure.",
-},
-{
-  topic: "Cellular architecture",
-  type: "boolean",
-  prompt: "A cellular system establishes calls among mobile subscribers and provides connectivity with landline subscribers.",
-  options: ["True", "False"],
-  answer: [0],
-  explanation:
-    "Cellular networks support calls between mobile users and interconnection with the public landline telephone network.",
-  tip: "The mobile network connects both its own subscribers and external telephone networks.",
-},
-{
-  topic: "Random access",
-  type: "single",
-  prompt: "Which listed mechanism reserves access opportunities to help prevent potential packet collisions before data transmission?",
-  options: ["Pure ALOHA", "PRMA", "Slotted ALOHA"],
-  answer: [1],
-  explanation:
-    "Packet Reservation Multiple Access (PRMA) uses reservation opportunities to reduce contention for subsequent packet transmissions.",
-  tip: "PRMA combines packet access with reservation of transmission slots.",
-},
-{
-  topic: "5G",
-  type: "single",
-  prompt: "Which beam-based multiple-access technique is identified as a way to improve spectrum efficiency with massive MIMO?",
-  options: ["FDMA", "TDMA", "CDMA", "BDMA"],
-  answer: [3],
-  explanation:
-    "The supplied description refers to Beam Division Multiple Access (BDMA), which separates transmissions by spatial beams.",
-  tip: "Beam-based access uses spatial separation to serve users.",
-},
-{
-  topic: "FDD",
-  type: "single",
-  prompt: "Frequency Division Duplex (FDD) can be used in which systems?",
-  options: [
-    "TDMA systems",
-    "All of them",
-    "Only analog FDMA systems",
-  ],
-  answer: [1],
-  explanation:
-    "FDD is a duplexing arrangement and can be used alongside different multiple-access methods, including TDMA.",
-  tip: "Duplexing (FDD/TDD) and multiple access (FDMA/TDMA/CDMA) describe different aspects of a radio system.",
-},
-{
-  topic: "AMPS",
-  type: "single",
-  prompt: "In FDMA cellular systems such as AMPS, how are voice channels used?",
-  options: [
-    "Only for signaling data",
-    "As setup channels when needed",
-    "Only for voice traffic",
-  ],
-  answer: [2],
-  explanation:
-    "In the supplied AMPS model, voice channels carry voice traffic; setup signaling uses control channels.",
-  tip: "Distinguish voice channels from the dedicated control channels used for setup.",
-},
-{
-  topic: "Frequency reuse",
-  type: "single",
-  prompt: "As cluster size K increases, what happens to C/I and spectrum efficiency?",
-  options: [
-    "C/I increases and spectrum efficiency decreases.",
-    "C/I decreases and spectrum efficiency increases.",
-    "Both C/I and spectrum efficiency increase.",
-    "Both C/I and spectrum efficiency decrease.",
-  ],
-  answer: [0],
-  explanation:
-    "A larger cluster increases co-channel separation and typically improves C/I, but each cell receives a smaller share of the available channels, reducing spectrum efficiency.",
-  tip: "Larger reuse clusters improve interference conditions at the cost of capacity per unit area.",
-},
+  {
+    topic: "Mobile services",
+    type: "multi",
+    prompt:
+      "Which are common subscriber features offered by cellular networks? Select every valid answer.",
+    options: [
+      "Automatic roaming between service areas",
+      "Call waiting during an active call",
+      "Call forwarding to another destination",
+      "SMS messaging",
+      "Voice blocking as a subscriber feature",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Roaming, call waiting, call forwarding, and SMS are common cellular services. Voice blocking is not a subscriber feature in this list.",
+    tip: "Think about services a user can enable or use—not network problems such as congestion.",
+  },
+  {
+    topic: "TDMA efficiency",
+    type: "single",
+    prompt:
+      "A TDMA frame contains 156.25 total bits, of which 40.25 are overhead. About what percentage remains for useful frame content?",
+    options: ["74.2%", "25.8%", "80.5%", "96.0%"],
+    answer: [0],
+    explanation:
+      "Useful fraction = (156.25 − 40.25) / 156.25 = 116 / 156.25 ≈ 0.742, or 74.2%.",
+    tip: "Subtract overhead first, then divide useful bits by total bits.",
+  },
+  {
+    topic: "TDMA efficiency",
+    type: "single",
+    prompt:
+      "A 5 ms TDMA slot has 0.25 ms of pilot overhead and 0.25 ms of guard time. What fraction of the slot remains for payload timing?",
+    options: ["90%", "10%", "80%", "95%"],
+    answer: [0],
+    explanation:
+      "Slot efficiency = (5 − 0.25 − 0.25) / 5 = 4.5 / 5 = 0.90, or 90%.",
+    tip: "Remove both overhead intervals before dividing by the full slot duration.",
+  },
+  {
+    topic: "Mobile registration",
+    type: "single",
+    prompt:
+      "After a newly powered-on mobile scans the control channels, what should it do next to select a serving cell?",
+    options: [
+      "Choose the cell site with the strongest received signal.",
+      "Transmit on every voice channel at once.",
+      "Connect directly to the PSTN.",
+      "Wait for a handoff before registering.",
+    ],
+    answer: [0],
+    explanation:
+      "The mobile compares received signal strength on the scanned control channels, selects a suitable strongest cell site, and then registers.",
+    tip: "Scan first, compare signal strength, then register with the selected site.",
+  },
+  {
+    topic: "Call setup",
+    type: "single",
+    prompt:
+      "A mobile's call request has reached the switching office. What normally happens before a traffic channel is assigned?",
+    options: [
+      "The request is authenticated.",
+      "The mobile is removed from the location register.",
+      "All neighboring cells are shut down.",
+      "The call is immediately routed to a paging receiver.",
+    ],
+    answer: [0],
+    explanation:
+      "The network authenticates the request before directing the serving cell site to allocate a voice or traffic channel.",
+    tip: "Authentication is part of call setup, before the traffic connection is granted.",
+  },
+  {
+    topic: "Call setup",
+    type: "single",
+    prompt:
+      "When the network originates a call to a mobile, how does the handset recognize that a page is intended for it?",
+    options: [
+      "It matches the identity carried in the page to its own ID.",
+      "It detects a change in its battery voltage.",
+      "It reads the called party's voice channel before paging.",
+      "It compares the page with an IMEI broadcast by every cell.",
+    ],
+    answer: [0],
+    explanation:
+      "The network sends pages over control channels, and the intended handset recognizes its own identity in the page.",
+    tip: "Paging is an addressed alert: the mobile listens for its own identifier.",
+  },
+  {
+    topic: "Network architecture",
+    type: "multi",
+    prompt:
+      "Which functions can be coordinated by a Mobile Telephone Switching Office (MTSO)? Select every valid answer.",
+    options: [
+      "Switching calls",
+      "Managing subscriber mobility",
+      "Billing support",
+      "Charging the mobile handset battery over the air",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "The MTSO coordinates switching, mobility management, and related billing functions; charging the handset is not a switching-office role.",
+    tip: "The MTSO coordinates the network side of a call, not the handset's physical power supply.",
+  },
+  {
+    topic: "Network architecture",
+    type: "single",
+    prompt:
+      "Which public network can carry a call between mobile subscribers served by different MTSOs?",
+    options: [
+      "PSTN",
+      "Reverse access channel",
+      "VLR",
+      "Radio paging transmitter",
+    ],
+    answer: [0],
+    explanation:
+      "The Public Switched Telephone Network (PSTN) interconnects switching offices and other telephone networks.",
+    tip: "When two mobile systems need an external network path, think telephone-network interconnection.",
+  },
+  {
+    topic: "Cell-site equipment",
+    type: "multi",
+    prompt:
+      "Which equipment can be found at a cellular cell site? Select every valid answer.",
+    options: [
+      "Transmit/receive antennas",
+      "Radio transceivers",
+      "Data links toward the switching office",
+      "Power equipment",
+      "A subscriber's SIM card",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Cell-site equipment includes antennas, transceivers, backhaul/data links, and power systems. A SIM belongs in a subscriber device.",
+    tip: "The site provides radio access and a network connection; subscriber credentials stay with the user.",
+  },
+  {
+    topic: "Mobile equipment",
+    type: "single",
+    prompt:
+      "What is the primary purpose of the SIM in a mobile subscriber unit?",
+    options: [
+      "Identify the subscriber and subscription",
+      "Amplify the cell site's transmitted signal",
+      "Assign frequencies to the cellular cluster",
+      "Replace the cell-site transceiver",
+    ],
+    answer: [0],
+    explanation:
+      "The Subscriber Identity Module stores information used to identify and authenticate the subscriber's service.",
+    tip: "A SIM is about subscriber identity, not radio coverage or cell planning.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "Seven calls, each lasting six minutes, are offered during a 30-minute interval. What is the average offered traffic?",
+    options: ["1.4 Erlangs", "0.7 Erlangs", "2.3 Erlangs", "42 Erlangs"],
+    answer: [0],
+    explanation:
+      "Total offered call time is 7 × 6 = 42 minutes. Divide by the 30-minute observation interval: 42 / 30 = 1.4 Erlangs.",
+    tip: "Erlangs are busy-time divided by observation-time.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "Which statement correctly distinguishes offered traffic from effective traffic?",
+    options: [
+      "Offered traffic is requested load; effective traffic is the load successfully carried.",
+      "Offered traffic is only successful calls; effective traffic includes blocked calls.",
+      "They are always equal, even when every channel is busy.",
+      "Effective traffic measures average call duration only.",
+    ],
+    answer: [0],
+    explanation:
+      "Offered load represents demand presented to the system. Effective or carried load is the traffic that the system actually serves.",
+    tip: "Demand offered can exceed what limited channels successfully carry.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "What does one Erlang of traffic mean in practical channel-occupancy terms?",
+    options: [
+      "One channel is occupied continuously on average.",
+      "One call is made every second.",
+      "One channel is idle for an entire hour.",
+      "One user is assigned one permanent channel.",
+    ],
+    answer: [0],
+    explanation:
+      "One Erlang represents a continuous average occupancy equivalent to one channel being busy for the whole observation period.",
+    tip: "Erlang measures occupancy, not a count of calls by itself.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "If 120 users each offer 0.1 Erlang, what is the system's total offered traffic?",
+    options: ["12 Erlangs", "1.2 Erlangs", "120 Erlangs", "0.1 Erlang"],
+    answer: [0],
+    explanation:
+      "Total traffic is the number of users times the average traffic per user: 120 × 0.1 = 12 Erlangs.",
+    tip: "Add many equal user loads by multiplying the per-user Erlangs by the user count.",
+  },
+  {
+    topic: "Traffic engineering",
+    type: "single",
+    prompt:
+      "Using ηtr = At / Nd, what is the trunking-efficiency ratio for 18 Erlangs carried across 24 channels?",
+    options: ["0.75", "1.33", "6", "42"],
+    answer: [0],
+    explanation:
+      "Divide carried traffic by the channel count: 18 / 24 = 0.75 Erlangs per channel.",
+    tip: "Keep the numerator as traffic and the denominator as the number of data channels.",
+  },
+  {
+    topic: "Random access",
+    type: "single",
+    prompt:
+      "How does Reservation ALOHA reduce contention for later data transmissions?",
+    options: [
+      "Users reserve future slots before sending their data.",
+      "Every user receives a permanent frequency band.",
+      "The base station retransmits every collided packet itself.",
+      "Users transmit only after a handoff.",
+    ],
+    answer: [0],
+    explanation:
+      "Reservation ALOHA uses a reservation step to assign future transmission slots, reducing repeated contention for those reserved data transmissions.",
+    tip: "The name gives the clue: reserve a slot, then use it.",
+  },
+  {
+    topic: "Multiple access",
+    type: "multi",
+    prompt:
+      "Which statements describe contention-based access? Select every valid answer.",
+    options: [
+      "Users may attempt access without a dedicated prior allocation.",
+      "Random access and collision-resolution methods are examples.",
+      "The approach can have relatively low coordination overhead.",
+      "Collisions can occur when users transmit together.",
+      "Every user is guaranteed a private frequency before attempting access.",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Contention-based methods avoid assigning every transmission a dedicated resource in advance. This reduces coordination overhead but allows collisions.",
+    tip: "Less pre-coordination is convenient, but simultaneous attempts can collide.",
+  },
+  {
+    topic: "Multiple access",
+    type: "single",
+    prompt:
+      "How does SDMA (also called beam division in some material) separate users who may share time and frequency?",
+    options: [
+      "By serving them in different spatial directions with antenna beams",
+      "By assigning each user a different call duration",
+      "By requiring every user to transmit on a different carrier frequency",
+      "By giving each user a separate telephone network",
+    ],
+    answer: [0],
+    explanation:
+      "Space Division Multiple Access separates users spatially, often using directional beams or advanced multi-antenna techniques.",
+    tip: "SDMA adds space as a resource dimension.",
+  },
+  {
+    topic: "FDMA",
+    type: "multi",
+    prompt:
+      "Which are characteristics or trade-offs of FDMA? Select every valid answer.",
+    options: [
+      "Guard bands help separate adjacent channels.",
+      "Uneven traffic can leave fixed bandwidth underused.",
+      "The technique is relatively straightforward to implement.",
+      "All users must share one carrier in synchronized time slots.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "FDMA divides spectrum into frequency channels and uses guard spacing. It is straightforward, but fixed allocations can waste capacity when traffic is uneven.",
+    tip: "FDMA separates by frequency; TDMA separates by time.",
+  },
+  {
+    topic: "TDMA",
+    type: "single",
+    prompt:
+      "What timing requirement is a notable TDMA implementation challenge?",
+    options: [
+      "Precise synchronization between transmitters and time slots",
+      "Permanent separation of every user into a unique frequency band",
+      "A different spreading code for every packet",
+      "An inability to encrypt digital signals",
+    ],
+    answer: [0],
+    explanation:
+      "TDMA users share a carrier in different time slots, so their transmissions must be synchronized to avoid overlapping slots.",
+    tip: "When time is divided into slots, timing errors can make users collide.",
+  },
+  {
+    topic: "FDMA capacity",
+    type: "single",
+    prompt:
+      "A 5 MHz allocation is divided into 25 kHz simplex channels. Ignoring guard bands, how many full-duplex calls can it support?",
+    options: ["100", "200", "25", "400"],
+    answer: [0],
+    explanation:
+      "Each full-duplex call needs two 25 kHz simplex channels, so 5,000 / (2 × 25) = 100 calls.",
+    tip: "Count both directions for every full-duplex call.",
+  },
+  {
+    topic: "AMPS",
+    type: "single",
+    prompt:
+      "A system has 400 full-duplex channels and a reuse cluster of K = 4. How many channels are assigned to each cell in the cluster?",
+    options: ["100", "400", "1,600", "4"],
+    answer: [0],
+    explanation:
+      "Divide the cluster's 400 channels among four cells: 400 / 4 = 100 channels per cell.",
+    tip: "With an even reuse plan, channels per cell equal total cluster channels divided by K.",
+  },
+  {
+    topic: "AMPS",
+    type: "single",
+    prompt:
+      "In the AMPS frequency plan described in the Gizmo material, what duplex spacing separates the mobile and cell-site transmit bands?",
+    options: ["45 MHz", "5 MHz", "25 kHz", "200 kHz"],
+    answer: [0],
+    explanation:
+      "The cited AMPS plan places mobile and cell-site transmit bands 45 MHz apart.",
+    tip: "Duplex spacing is the frequency separation between the paired uplink and downlink bands.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "multi",
+    prompt:
+      "Which statements correctly distinguish fixed, dynamic, and hybrid channel assignment? Select every valid answer.",
+    options: [
+      "Fixed assignment gives cells predetermined channels.",
+      "Dynamic assignment selects an available channel from a shared pool as needed.",
+      "Hybrid assignment combines fixed and dynamic approaches.",
+      "Dynamic assignment means every cell permanently keeps the same channels.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "FCA preassigns channels, DCA chooses from available resources when needed, and HCA combines features of both.",
+    tip: "Fixed = planned in advance; dynamic = selected as demand occurs; hybrid = a mix.",
+  },
+  {
+    topic: "Channel borrowing",
+    type: "single",
+    prompt:
+      "In a borrowing scheme, what are the overloaded cell and the cell lending a channel called?",
+    options: [
+      "Acceptor and donor, respectively",
+      "Donor and acceptor, respectively",
+      "Serving and paging, respectively",
+      "Mobile and switching, respectively",
+    ],
+    answer: [0],
+    explanation:
+      "The overloaded acceptor cell borrows a channel from a neighboring donor cell, provided reuse constraints remain satisfied.",
+    tip: "The acceptor receives; the donor lends.",
+  },
+  {
+    topic: "Channel borrowing",
+    type: "single",
+    prompt:
+      "When prioritizing channels for local calls and borrowing, which order best preserves flexibility?",
+    options: [
+      "Keep high-priority channels for local calls and consider lower-priority channels for borrowing first.",
+      "Borrow the highest-priority channel first and reserve the lowest for local calls.",
+      "Borrow only channels already in use.",
+      "Assign every channel to the same cell permanently.",
+    ],
+    answer: [0],
+    explanation:
+      "The material's prioritization approach uses higher-priority channels for local calls and begins borrowing from lower-priority channels.",
+    tip: "Protect the most valuable channels for the cell's own traffic.",
+  },
+  {
+    topic: "Channel sharing",
+    type: "multi",
+    prompt:
+      "Which statements describe temporary channel sharing between sectors? Select every valid answer.",
+    options: [
+      "It can improve trunking efficiency.",
+      "A cyclic sharing pattern may be used.",
+      "A shared channel can be returned when it becomes available to its original sector.",
+      "It permanently increases the licensed spectrum.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "Temporary sharing lets sectors use spare resources more efficiently; cyclic rules can coordinate sharing, and channels can return to their home sector.",
+    tip: "Sharing redistributes existing channels; it does not create new spectrum.",
+  },
+  {
+    topic: "Cell planning",
+    type: "single",
+    prompt: "What is the key idea of an underlaid-cell arrangement?",
+    options: [
+      "A smaller cell at a large-cell site can use a second frequency-reuse pattern.",
+      "Every large cell is replaced by a single omnidirectional antenna.",
+      "Two mobile subscribers must share one SIM.",
+      "The network disables frequency reuse.",
+    ],
+    answer: [0],
+    explanation:
+      "An underlaid arrangement places a smaller cell within a larger-cell footprint, allowing two reuse patterns to serve different demand conditions.",
+    tip: "Underlaid means a smaller coverage layer exists inside a larger one.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "multi",
+    prompt:
+      "Besides the available channel count, which inputs can affect channel assignment? Select every valid answer.",
+    options: [
+      "Call-arrival rate",
+      "Call duration",
+      "Target call-blocking probability",
+      "Target call-dropping rate",
+      "Channels reserved for handoffs",
+      "Handset color",
+    ],
+    answer: [0, 1, 2, 3, 4],
+    explanation:
+      "Assignment decisions account for offered traffic, service targets, and handoff reserves as well as the channel supply.",
+    tip: "Think demand, quality targets, and protected handoff capacity.",
+  },
+  {
+    topic: "Handoff control",
+    type: "multi",
+    prompt:
+      "Which statements correctly describe NCHO, MAHO, and MCHO? Select every valid answer.",
+    options: [
+      "In NCHO, the network makes the handoff decision using network measurements.",
+      "In MAHO, the mobile measures neighboring signals and reports them; the network decides.",
+      "In MCHO, the mobile makes the handoff decision.",
+      "In MAHO, the mobile always makes the final handoff decision.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "NCHO places measurement and decision in the network, MAHO has the mobile provide measurements while the network decides, and MCHO gives the decision to the mobile.",
+    tip: "For MAHO, remember: mobile-assisted measurements, network-controlled decision.",
+  },
+  {
+    topic: "Handoffs",
+    type: "multi",
+    prompt:
+      "Which are characteristics of a soft handoff? Select every valid answer.",
+    options: [
+      "The new connection is established before the old one is released.",
+      "The mobile may use more than one channel or cell connection briefly.",
+      "The overlap can improve call continuity.",
+      "The old connection must always be broken before a new one begins.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "Soft handoff is make-before-break: overlapping connections can improve reliability, though they may consume multiple resources temporarily.",
+    tip: "Soft handoff keeps the old link while the new link is brought up.",
+  },
+  {
+    topic: "Handoffs",
+    type: "multi",
+    prompt:
+      "Which situations may trigger a handoff? Select every valid answer.",
+    options: [
+      "The mobile crosses a cell boundary.",
+      "A coverage hole or weak signal threatens the call.",
+      "A channel change is needed to address interference.",
+      "A cell needs to free capacity for another call.",
+      "The network wants to increase the mobile's screen brightness.",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Handoffs can maintain coverage, manage interference, or move a connection to free capacity—not only follow geographic movement.",
+    tip: "A handoff is a connection-management tool, not just a map-boundary event.",
+  },
+  {
+    topic: "Cell splitting",
+    type: "single",
+    prompt:
+      "What distinguishes dynamic cell splitting from a permanent split planned in advance?",
+    options: [
+      "Dynamic splitting responds to current traffic demand.",
+      "Dynamic splitting never changes cell size.",
+      "Permanent splitting requires no frequency-plan changes.",
+      "Dynamic splitting is performed only when a call ends.",
+    ],
+    answer: [0],
+    explanation:
+      "Dynamic splitting adjusts the use of cell resources according to real-time traffic, while permanent splitting is planned and installed ahead of time.",
+    tip: "Dynamic means the network can react to demand as it changes.",
+  },
+  {
+    topic: "Frequency management",
+    type: "multi",
+    prompt:
+      "Which tasks belong to frequency management? Select every valid answer.",
+    options: [
+      "Designating control and traffic channels",
+      "Numbering channels",
+      "Grouping channels for cell use",
+      "Planning channel allocation to improve spectrum efficiency",
+      "Measuring each subscriber's screen size",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Frequency management organizes, numbers, groups, and assigns the available channels to meet interference, capacity, and service goals.",
+    tip: "It is the planning and organization of radio channels—not handset specifications.",
+  },
+  {
+    topic: "Random access",
+    type: "single",
+    prompt:
+      "What are the ideal maximum throughputs of pure ALOHA and slotted ALOHA, respectively?",
+    options: [
+      "About 0.184 and 0.368",
+      "About 0.368 and 0.184",
+      "About 0.5 and 1.0",
+      "Both are exactly 1.0",
+    ],
+    answer: [0],
+    explanation:
+      "Pure ALOHA peaks at 1/(2e) ≈ 0.184, while slotted ALOHA peaks at 1/e ≈ 0.368 because slot alignment shortens the vulnerable period.",
+    tip: "Slotted ALOHA approximately doubles the ideal peak throughput.",
+  },
+  {
+    topic: "FDD",
+    type: "single",
+    prompt: "In an FDD link, what separates uplink and downlink transmissions?",
+    options: [
+      "A fixed frequency spacing between paired bands",
+      "A time slot on the same carrier only",
+      "A different SIM card for each direction",
+      "A paging message between every symbol",
+    ],
+    answer: [0],
+    explanation:
+      "Frequency Division Duplex uses separate uplink and downlink frequency bands, separated by a duplex spacing.",
+    tip: "FDD separates directions by frequency; TDD separates them by time.",
+  },
+  {
+    topic: "Cellular fundamentals",
+    type: "multi",
+    prompt:
+      "Cellular communication is designed to enhance which of the following? Select every valid answer.",
+    options: [
+      "System capacity",
+      "Spectrum efficiency",
+      "Coverage area",
+      "Desired signal quality",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "Cellular design uses many techniques to improve capacity, spectrum use, coverage, and the quality of the desired signal.",
+    tip: "Cellular systems balance several goals rather than optimizing only one.",
+  },
+  {
+    topic: "Cellular fundamentals",
+    type: "multi",
+    prompt:
+      "Which limitations are associated with conventional radio communication systems? Select every valid answer.",
+    options: [
+      "Low-power transmission",
+      "Limited services",
+      "Small coverage area",
+      "Inefficient spectrum utilization",
+    ],
+    answer: [1, 2, 3],
+    explanation:
+      "The supplied answer key identifies limited services, small coverage, and inefficient spectrum use as limitations; low-power transmission is not selected.",
+    tip: "Cellular architecture was developed in part to improve service, coverage, and reuse of scarce spectrum.",
+  },
+  {
+    topic: "Cell planning",
+    type: "multi",
+    prompt:
+      "Why is a hexagon used as the theoretical cell shape in cellular planning? Select every valid answer.",
+    options: [
+      "It reduces the occurrence of handovers.",
+      "For a given radius, it has the largest area.",
+      "It offers a practical, non-overlapping approximation of radio coverage.",
+      "It matches the shape of real-world coverage.",
+    ],
+    answer: [1, 2],
+    explanation:
+      "Hexagons tile a plane without gaps and are a useful idealization of a circular coverage area. Real cells do not have perfectly regular boundaries.",
+    tip: "The hexagon is a planning model, not a claim that real radio coverage is hexagonal.",
+  },
+  {
+    topic: "Cell planning",
+    type: "multi",
+    prompt:
+      "Which constraints affect the shape of actual cells? Select every valid answer.",
+    options: [
+      "None of them",
+      "Non-uniform population densities",
+      "Man-made structures",
+      "Natural irregular terrain",
+    ],
+    answer: [1, 2, 3],
+    explanation:
+      "Population distribution, buildings, and terrain all affect propagation and the practical boundaries of cells.",
+    tip: "Actual coverage follows propagation and demand, not a geometric template.",
+  },
+  {
+    topic: "Cellular fundamentals",
+    type: "single",
+    prompt: "What is a major factor affecting cellular system design?",
+    options: ["Noise", "Power consumption", "Geographic area", "Interference"],
+    answer: [3],
+    explanation:
+      "Best-effort key: interference is the most likely intended answer because frequency reuse makes interference a central cellular-design constraint. The source marking was unclear.",
+    tip: "Reuse improves capacity, but co-channel interference must be controlled.",
+  },
+  {
+    topic: "Cell sectoring",
+    type: "single",
+    prompt: "What is the main aim of cell sectoring?",
+    options: [
+      "Reduce co-channel interference and decrease C/I",
+      "Reduce co-channel interference and increase C/I by increasing cluster size K",
+      "Reduce co-channel interference and decrease C/I by decreasing cluster size K",
+      "Reduce co-channel interference and increase C/I without increasing cluster size K",
+    ],
+    answer: [3],
+    explanation:
+      "Directional sector antennas reduce the number of interfering co-channel cells seen by a sector, improving C/I without requiring a larger cluster.",
+    tip: "Sectoring improves the interference environment while preserving the reuse cluster size.",
+  },
+  {
+    topic: "Cell sectoring",
+    type: "single",
+    prompt: "Which listed advantage of cell sectoring is correct?",
+    options: [
+      "Enhancing trunking efficiency",
+      "Lowering transmission power",
+      "Increasing coverage area",
+      "Enhancing spectrum efficiency",
+    ],
+    answer: [3],
+    explanation:
+      "Sectoring can improve spectrum efficiency by reducing interference and allowing more aggressive frequency reuse.",
+    tip: "Sectoring is chiefly an interference and capacity technique.",
+  },
+  {
+    topic: "Frequency reuse",
+    type: "single",
+    prompt:
+      "When cluster size K is minimized, what happens to overall system capacity C?",
+    options: [
+      "It increases.",
+      "It decreases.",
+      "It remains unchanged.",
+      "It becomes zero.",
+    ],
+    answer: [0],
+    explanation:
+      "A smaller reuse cluster allows the available channels to be reused more frequently, increasing capacity, though co-channel interference also rises.",
+    tip: "Smaller K means more frequent reuse and greater capacity, with an interference trade-off.",
+  },
+  {
+    topic: "Frequency reuse",
+    type: "single",
+    prompt: "Minimizing cluster size K will have which effects?",
+    options: [
+      "Increase co-channel interference and decrease system capacity",
+      "Decrease co-channel interference and system capacity",
+      "Increase co-channel interference and system capacity",
+      "Decrease co-channel interference and increase system capacity",
+    ],
+    answer: [2],
+    explanation:
+      "A smaller cluster increases how often frequencies are reused, which raises both capacity and co-channel interference.",
+    tip: "Frequency reuse trades a higher interference level for more capacity.",
+  },
+  {
+    topic: "Frequency reuse",
+    type: "single",
+    prompt:
+      "What is a likely effect of increasing capacity through frequency reuse?",
+    options: [
+      "Wider coverage",
+      "A decrease in co-channel interference",
+      "Better signal quality",
+      "An increase in co-channel interference",
+    ],
+    answer: [3],
+    explanation:
+      "More aggressive reuse places co-channel cells closer together, which generally increases co-channel interference.",
+    tip: "Capacity gains from reuse can come with a signal-quality cost.",
+  },
+  {
+    topic: "Cell splitting",
+    type: "single",
+    prompt:
+      "With the supplied cell-splitting model, how do the number of clusters over the coverage area and overall system capacity change?",
+    options: [
+      "Clusters increase; capacity decreases.",
+      "Clusters decrease; capacity remains the same.",
+      "Clusters increase; capacity increases.",
+      "Clusters decrease; capacity increases.",
+    ],
+    answer: [2],
+    explanation:
+      "The supplied answer key indicates that splitting increases the number of smaller cells, so fewer complete reuse clusters are needed across the same coverage area while capacity increases.",
+    tip: "Cell splitting adds smaller cells to serve higher traffic density.",
+  },
+  {
+    topic: "Cell splitting",
+    type: "single",
+    prompt:
+      "After one cell split, what is the new capacity relative to the old capacity?",
+    options: [
+      "The same",
+      "Twice as high",
+      "Three times as high",
+      "Half as high",
+    ],
+    answer: [1],
+    explanation:
+      "In the simplified model, dividing one cell into two smaller cells doubles the number of cells reusing the channel set and therefore doubles capacity.",
+    tip: "This twofold result assumes the simplified one-cell-to-two model.",
+  },
+  {
+    topic: "Co-channel interference",
+    type: "single",
+    prompt: "Which method reduces co-channel interference?",
+    options: [
+      "Lowering antenna heights at the cell site",
+      "Using omnidirectional antennas at the cell site",
+      "Increasing the separation between two co-channel cells",
+      "All of them",
+    ],
+    answer: [2],
+    explanation:
+      "Increasing the separation between co-channel cells reduces the interference power received from the other cell.",
+    tip: "Greater reuse distance generally means less co-channel interference.",
+  },
+  {
+    topic: "Antennas",
+    type: "single",
+    prompt: "At what point is antenna Half Power Beamwidth (HPBW) measured?",
+    options: [
+      "Where the pattern decreases by 50% from the peak of a side lobe",
+      "Where the pattern decreases by 3 dB from the peak of the main beam",
+      "Where the pattern increases by 3 dB from the peak of a side lobe",
+      "Where the pattern increases by 50% from the peak of the main beam",
+    ],
+    answer: [1],
+    explanation:
+      "HPBW is the angular width between the points where power falls to half its peak value, corresponding to -3 dB from the main-beam peak.",
+    tip: "Half power corresponds to a 3 dB decrease in power.",
+  },
+  {
+    topic: "Antennas",
+    type: "single",
+    prompt: "What does using two antennas at a base station provide?",
+    options: [
+      "Reduction in interference",
+      "Security",
+      "Diversity",
+      "Enhancement in the coverage area",
+    ],
+    answer: [2],
+    explanation:
+      "A pair of antennas can provide diversity reception, helping mitigate fading by combining or selecting signals with different propagation paths.",
+    tip: "Antenna diversity combats fading; it is not simply an increase in coverage area.",
+  },
+  {
+    topic: "Mobile initialization",
+    type: "single",
+    prompt:
+      "After a mobile is switched on, which channels does it first scan during initialization?",
+    options: [
+      "All reverse control channels, selecting the strongest",
+      "All voice channels, selecting the strongest",
+      "All forward control channels, selecting the strongest",
+      "All forward control channels, selecting the weakest",
+    ],
+    answer: [2],
+    explanation:
+      "The mobile scans forward control channels and selects the strongest suitable one to begin system acquisition.",
+    tip: "Initialization starts by finding a usable forward control channel.",
+  },
+  {
+    topic: "Handoffs",
+    type: "boolean",
+    prompt:
+      "An intra-cell handover takes place when a mobile moves from one sector to another within the same cell.",
+    options: ["True", "False"],
+    answer: [0],
+    explanation:
+      "A transition between sectors belonging to the same cell is an intra-cell handover.",
+    tip: "A sector change can require a handover even when the cell site remains the same.",
+  },
+  {
+    topic: "Handoffs",
+    type: "boolean",
+    prompt:
+      "If a mobile reaches a signal-strength hole not covered by any cell, a handoff is made automatically.",
+    options: ["True", "False"],
+    answer: [1],
+    explanation:
+      "Best-effort key: likely false. A handoff needs a suitable target cell; if no cell covers the area, the connection may be lost instead. The source wording and marked answer were unclear.",
+    tip: "Handoff can move a connection to another available cell, but cannot create coverage where none exists.",
+  },
+  {
+    topic: "Channel borrowing",
+    type: "single",
+    prompt:
+      "What is temporary channel sharing between a cell and a neighboring cell called?",
+    options: ["Cell sectoring", "Channel borrowing", "Cell splitting"],
+    answer: [1],
+    explanation:
+      "Channel borrowing temporarily lets an overloaded cell use an available channel from a donor cell, subject to interference constraints.",
+    tip: "The overloaded cell borrows; the donor cell lends.",
+  },
+  {
+    topic: "Channel borrowing",
+    type: "multi",
+    prompt:
+      "In a cellular network, from where can a cell borrow additional channels? Select every valid answer.",
+    options: [
+      "Another sector of the same cell site",
+      "Another cell in the same cluster that has free channels",
+      "Another communication system such as Wi-Fi",
+      "A cell in a different cluster that has free channels",
+    ],
+    answer: [0, 1],
+    explanation:
+      "Best-effort key: the supplied notes identify another sector at the same site and a cell in the same cluster as sources. The scan does not clearly establish the selected choices; actual borrowing is constrained by the frequency plan and interference rules.",
+    tip: "A donor must have a compatible free channel that can be used without violating reuse constraints.",
+  },
+  {
+    topic: "Channel assignment",
+    type: "single",
+    prompt:
+      "In an overlapped-cells channel-assignment scheme, smaller cells are activated or deactivated according to what?",
+    options: [
+      "Interference",
+      "Number of channels",
+      "Traffic",
+      "Total power consumption",
+    ],
+    answer: [2],
+    explanation:
+      "The smaller cells can be activated or deactivated in response to traffic demand.",
+    tip: "Overlaid cell layers help adapt capacity to changing demand.",
+  },
+  {
+    topic: "Frequency management",
+    type: "boolean",
+    prompt:
+      "Frequency management and channel assignment help achieve spectrum-utilization objectives and adapt to traffic density.",
+    options: ["True", "False"],
+    answer: [0],
+    explanation:
+      "Frequency management organizes channel use, while assignment methods can adapt available channels to traffic and system requirements.",
+    tip: "Good channel planning balances efficient spectrum use with changing demand.",
+  },
+  {
+    topic: "FDD",
+    type: "single",
+    prompt: "What does Frequency Division Duplex (FDD) separate?",
+    options: [
+      "Subscribers in the same cell on the downlink",
+      "Subscribers in the same cell on the uplink",
+      "The uplink and downlink of the same subscriber",
+      "None of the choices",
+    ],
+    answer: [2],
+    explanation:
+      "FDD uses separate frequency bands for uplink and downlink transmission by the same subscriber.",
+    tip: "FDD separates communication directions by frequency.",
+  },
+  {
+    topic: "Multiple access",
+    type: "single",
+    prompt: "Which multiple-access technique requires precise synchronization?",
+    options: ["FDMA", "TDMA", "CDMA"],
+    answer: [1],
+    explanation:
+      "TDMA users share a carrier in assigned time slots, so transmissions must be synchronized to avoid overlap.",
+    tip: "Time-slot boundaries make synchronization essential in TDMA.",
+  },
+  {
+    topic: "Random access",
+    type: "single",
+    prompt:
+      "A subscriber senses the medium and, if it is idle, transmits with probability p or defers with probability (1-p) until the next slot. Which protocol is this?",
+    options: [
+      "CSMA/CD",
+      "(1-p)-persistent CSMA",
+      "p-persistent CSMA",
+      "CSMA/CA",
+    ],
+    answer: [2],
+    explanation:
+      "In p-persistent CSMA, a station transmits with probability p when the channel is idle and defers with probability 1-p.",
+    tip: "The probability p in the protocol name is the chance of transmitting in an idle slot.",
+  },
+  {
+    topic: "Multiple access",
+    type: "single",
+    prompt:
+      "Packet Radio Multiple Access schemes can be which of the following?",
+    options: [
+      "Contention-free only",
+      "Both contention-free and contention-based",
+      "Contention-based only",
+    ],
+    answer: [1],
+    explanation:
+      "Packet Radio Multiple Access schemes include both contention-based and contention-free approaches.",
+    tip: "Packet radio access is a family of schemes, not a single access strategy.",
+  },
+  {
+    topic: "Multiple access",
+    type: "multi",
+    prompt:
+      "Which statements correctly describe SDMA, TDMA, and CDMA? Select every valid answer.",
+    options: [
+      "SDMA separates users by their different spatial positions or directions.",
+      "TDMA lets users share a frequency, assigning each a time slot.",
+      "CDMA lets users share a frequency at the same time using different codes.",
+    ],
+    answer: [0, 1, 2],
+    explanation:
+      "SDMA separates spatially, TDMA separates in time, and CDMA separates users using codes on shared time and frequency resources.",
+    tip: "Remember the resource dimension: space, time, or code.",
+  },
+  {
+    topic: "Cellular generations",
+    type: "multi",
+    prompt:
+      "Which switching technique is matched with each generation or standard? Select every correct match.",
+    options: [
+      "GSM — circuit switching",
+      "EDGE — packet switching",
+      "UMTS — circuit and packet switching",
+      "LTE — packet switching",
+    ],
+    answer: [0, 1, 2, 3],
+    explanation:
+      "The supplied matching associates GSM with circuit switching, EDGE with packet switching, UMTS with both circuit- and packet-switched services, and LTE with packet switching.",
+    tip: "LTE is all-IP packet-switched; earlier generations supported circuit-switched voice.",
+  },
+  {
+    topic: "Cellular architecture",
+    type: "single",
+    prompt:
+      "What is the call path between two mobile stations served by different base stations but the same BSC and MSC?",
+    options: [
+      "MS1 → BS1 → BS2 → MS2",
+      "MS1 → BS1 → BSC → BS2 → MS2",
+      "MS1 → BS1 → BSC → MSC → BSC → BS2 → MS2",
+      "None of the above",
+    ],
+    answer: [2],
+    explanation:
+      "The call is routed from the first mobile through its base station and the controller/core switching path to the destination base station and mobile.",
+    tip: "Trace the call through the network elements connecting the two base stations.",
+  },
+  {
+    topic: "Cellular architecture",
+    type: "single",
+    prompt: "In a basic cellular system, what are data links used for?",
+    options: [
+      "Carrying multiple-channel data from the cell site to the MTSO",
+      "Serving as the air interface between the BTS and BSC",
+      "Serving as an air interface between the CSE and MSU",
+      "Carrying data between PSTNs",
+    ],
+    answer: [0],
+    explanation:
+      "Backhaul data links carry aggregated traffic and signaling between cell sites and the Mobile Telephone Switching Office (MTSO).",
+    tip: "The radio air interface connects a mobile and base station; data links connect network infrastructure.",
+  },
+  {
+    topic: "Cellular architecture",
+    type: "boolean",
+    prompt:
+      "A cellular system establishes calls among mobile subscribers and provides connectivity with landline subscribers.",
+    options: ["True", "False"],
+    answer: [0],
+    explanation:
+      "Cellular networks support calls between mobile users and interconnection with the public landline telephone network.",
+    tip: "The mobile network connects both its own subscribers and external telephone networks.",
+  },
+  {
+    topic: "Random access",
+    type: "single",
+    prompt:
+      "Which listed mechanism reserves access opportunities to help prevent potential packet collisions before data transmission?",
+    options: ["Pure ALOHA", "PRMA", "Slotted ALOHA"],
+    answer: [1],
+    explanation:
+      "Packet Reservation Multiple Access (PRMA) uses reservation opportunities to reduce contention for subsequent packet transmissions.",
+    tip: "PRMA combines packet access with reservation of transmission slots.",
+  },
+  {
+    topic: "5G",
+    type: "single",
+    prompt:
+      "Which beam-based multiple-access technique is identified as a way to improve spectrum efficiency with massive MIMO?",
+    options: ["FDMA", "TDMA", "CDMA", "BDMA"],
+    answer: [3],
+    explanation:
+      "The supplied description refers to Beam Division Multiple Access (BDMA), which separates transmissions by spatial beams.",
+    tip: "Beam-based access uses spatial separation to serve users.",
+  },
+  {
+    topic: "FDD",
+    type: "single",
+    prompt: "Frequency Division Duplex (FDD) can be used in which systems?",
+    options: ["TDMA systems", "All of them", "Only analog FDMA systems"],
+    answer: [1],
+    explanation:
+      "FDD is a duplexing arrangement and can be used alongside different multiple-access methods, including TDMA.",
+    tip: "Duplexing (FDD/TDD) and multiple access (FDMA/TDMA/CDMA) describe different aspects of a radio system.",
+  },
+  {
+    topic: "AMPS",
+    type: "single",
+    prompt:
+      "In FDMA cellular systems such as AMPS, how are voice channels used?",
+    options: [
+      "Only for signaling data",
+      "As setup channels when needed",
+      "Only for voice traffic",
+    ],
+    answer: [2],
+    explanation:
+      "In the supplied AMPS model, voice channels carry voice traffic; setup signaling uses control channels.",
+    tip: "Distinguish voice channels from the dedicated control channels used for setup.",
+  },
+  {
+    topic: "Frequency reuse",
+    type: "single",
+    prompt:
+      "As cluster size K increases, what happens to C/I and spectrum efficiency?",
+    options: [
+      "C/I increases and spectrum efficiency decreases.",
+      "C/I decreases and spectrum efficiency increases.",
+      "Both C/I and spectrum efficiency increase.",
+      "Both C/I and spectrum efficiency decrease.",
+    ],
+    answer: [0],
+    explanation:
+      "A larger cluster increases co-channel separation and typically improves C/I, but each cell receives a smaller share of the available channels, reducing spectrum efficiency.",
+    tip: "Larger reuse clusters improve interference conditions at the cost of capacity per unit area.",
+  },
 ];
